@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import MenuList from "../component/website/menu/MenuList";
+import Container from "../component/website/elemets/Container";
 
 export default function Home() {
   return (
@@ -10,7 +11,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header>
-        <MenuList></MenuList>
+        <Container> 
+          <MenuList></MenuList>
+        </Container>
+       
       </header>
       <main className={styles.main}>
         
