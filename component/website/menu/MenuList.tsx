@@ -1,8 +1,9 @@
 
-import CONFIG from "../../../web.config";
+import CONFIG from "web.config";
 import {useState, useEffect, useRef} from "react";
 import { useRouter } from "next/router";
-import asset from "../../../plugins/assets/asset";
+import { assertInputObjectType } from "graphql";
+import asset from "plugins/assets/asset";
 
 export default function menuCustomList () {
   const node = useRef();
@@ -13,7 +14,7 @@ export default function menuCustomList () {
     <div className="menuCustomList">
       <div ref={node}>
             <a onClick={()=>router.push("/")} className="logoDesktop">
-              <img src={asset("/images/demo/logo1.png")}/>
+              <img src={asset("/image/demo/logo1.png")}/>
             </a>
             <a href={baseUrlShare}>
                 <span role="img" aria-label="Trang chủ"></span>
