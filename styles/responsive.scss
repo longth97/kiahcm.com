@@ -1,0 +1,20 @@
+.menuCustom_su{
+    display: none;
+}
+.headerMoblie{
+    display: none;
+}
+@media only screen and (max-width: 1024px){
+    
+    .menuCustom_su{
+        display: block;
+    }
+
+    .menuCustomList{
+        display: none !important;
+    }
+
+    .headerMoblie{
+        display: block;
+    }
+}

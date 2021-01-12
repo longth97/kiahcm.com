@@ -1,7 +1,7 @@
 
-import CONFIG from "../../../web.config";
+import CONFIG from "web.config";
 import { useRouter } from "next/router";
-import PopupRule from "components/website/popup/PopupRule";
+// import PopupRule from "components/website/popup/PopupRule";
 import {useRef, useState, useEffect } from "react";
 
 
@@ -17,62 +17,70 @@ const Menu = ({ open,setOpen, status, setContext }) => {
   // console.log(router);
   return (
     <div className ={"StyledMenu"} open={open}>
-        {/* <a onClick={()=>router.push("/")}>
+
+        <a onClick={()=>router.push("/")}>
             <span role="img" aria-label="Trang chủ"></span>
             Trang chủ
-        </a> */}
-         <a href={baseUrlShare}>
-            <span role="img" aria-label="Chọn chủ đề"></span>
-            Chọn chủ đề
         </a>
-        {/* <a onClick={()=>router.push("/")}>
-            <span role="img" aria-label="Chọn chủ đề"></span>
-            Chọn chủ đề
-        </a> */}
 
-        {/* <a onClick={()=>router.push("/gallery")}>
-            <span role="img" aria-label="Thư viện lời chúc"></span>
-            Thư viện lời chúc
-            </a> */}
-
-        <a href={baseUrlShare+"/gallery"}>
-            <span role="img" aria-label="Thư viện lời chúc"></span>
-            Thư viện lời chúc
+        <a onClick={()=>router.push("/san-pham")}>
+            <span role="img" aria-label="Sản phẩm"></span>
+            Sản phẩm
+            </a>
+        
+        <a onClick={()=>router.push("/dich-vu")}>
+            <span role="img" aria-label="Dịch vụ"></span>
+            Dịch vụ
         </a>
-        {/* <a onClick={()=>router.push("/create")}>
-            <span role="img" aria-label="Tạo câu chúc"></span>
-            Tạo câu chúc
-        </a> */}
-        <a onClick={()=>router.push("/gifts")}>
-            <span role="img" aria-label="Quà tặng"></span>
-            Danh sách quà tặng
+        <a onClick={()=>router.push("/ban-gia")}>
+            <span role="img" aria-label="Bản giá"></span>
+            Bản giá
         </a>
-        <a onClick={handleClick}>
+        <a onClick={()=>router.push("/tin-tuc")}>
+            <span role="img" aria-label="Tin tức"></span>
+            Tin tức
+        </a>
+        <a onClick={()=>router.push("/gioi-thieu")}>
+            <span role="img" aria-label="Giới thiệu"></span>
+            Giới thiệu
+        </a>
+        <a onClick={()=>router.push("/gioi-thieu")}>
+            <span role="img" aria-label="Liên hệ"></span>
+            Liên hệ
+        </a>
+        {/* <a onClick={handleClick}>
             <span role="img" aria-label={"T&C"}></span>
             {"Thể lệ chương trình"}
-        </a>
+        </a> */}
         <style jsx>{`
             .StyledMenu{
                 z-index: 1;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                background: #002f0cf5;
+                background: gray;
                 transform: ${ open ? 'translateX(0)' : 'translateX(-100%)'};
                 height: 100vh;
+                
                 text-align: left;
                 padding: 2rem;
                 position: absolute;
                 top: 0;
                 left: 0;
                 transition: transform 0.3s ease-in-out;
+                @media (max-width: 1024px) {
+                    width: 30%;
+                }
 
-                @media (max-width: 576px) {
+                @media (max-width: 768px) {
+                    width: 50%;
+                }
+                @media (max-width: 599px) {
                     width: 100%;
-                    }
+                }
 
                 a {
-                    font-size: 2rem;
+                    font-size: 1.5rem;
                     text-transform: uppercase;
                     padding: 1rem 0;
                     font-weight: bold;
@@ -126,7 +134,7 @@ const Burger = ({ open, setOpen }) => {
             div {
                 width: 2rem;
                 height: 0.25rem;
-                background: ${open ? '#FFF' : '#EFFFFA'};
+                background: ${open ? '#FFF' : '#000000'};
                 border-radius: 10px;
                 transition: all 0.3s linear;
                 position: relative;
@@ -193,13 +201,8 @@ export default function MenuDemo () {
           setContext={setStatus} 
         />
       </div>
-      {
-        Popup(status)
-      }
       {/* {
-        status
-        ? <PopupRule statusShow={true}></PopupRule>
-        :<PopupRule statusShow={false}></PopupRule>
+        Popup(status)
       } */}
     </div>
   )  
