@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "component/website/menu/MenuCustom_su.js"  ],
   "exclude": [
     "node_modules"
   ]
