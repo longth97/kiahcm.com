@@ -1,4 +1,4 @@
-import asset from "plugins/assets/asset";
+import { asset } from "plugins/assets/asset";
 
 export const CustomFooter = () => {
   return (

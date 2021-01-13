@@ -1,7 +1,7 @@
 import CONFIG from "../../web.config";
 import framework from "../../diginext.json";
 
-const asset = (src) => {
+export const asset = (src: string) => {
   // console.log(CONFIG.NEXT_PUBLIC_CDN_BASE_PATH);
   // console.log(framework);
 
@@ -31,5 +31,3 @@ const asset = (src) => {
     }
   }
 };
-
-export default asset;
