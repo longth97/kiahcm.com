@@ -2,22 +2,24 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import MenuList from "../component/website/menu/MenuList";
 import Container from "../component/website/elemets/Container";
+import React from 'react';
+import { ProductCard } from 'component/ProductCard/ProductCard';
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Trang chủ - KIA Gò Vấp</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header>
-        <Container> 
+        <Container>
           <MenuList></MenuList>
         </Container>
-       
+
       </header>
       <main className={styles.main}>
-        
+        <ProductCard />
       </main>
 
       <footer className={styles.footer}>
@@ -26,8 +28,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
+          Design by KMASoft
         </a>
       </footer>
     </div>
