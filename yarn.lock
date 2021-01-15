@@ -291,31 +291,6 @@
   resolved "https://registry.yarnpkg.com/@emotion/hash/-/hash-0.8.0.tgz#bbbff68978fefdbe68ccb533bc8cbe1d1afb5413"
   integrity sha512-kBJtf7PH6aWwZ6fka3zQ0p6SBYzx4fl1LoZXE2RrnYST9Xljm7WfKJrU4g/Xr3Beg72MLrp1AWNUmuYJTL7Cow==
 
-"@formatjs/ecma402-abstract@1.5.1":
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/@formatjs/ecma402-abstract/-/ecma402-abstract-1.5.1.tgz#629324d2bfdc570ed210fec7700ce20bbd872bed"
-  integrity sha512-io9XhgIpEbc6jSdn4QVnJeFaUzy6gS5fGiIRCUJ7QKqCNp69JS8EJPW8gCtvwz+JQtx2SJvhaMJbzz3rGkTXBA==
-  dependencies:
-    tslib "^2.0.1"
-
-"@formatjs/intl-getcanonicallocales@1.5.3":
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/@formatjs/intl-getcanonicallocales/-/intl-getcanonicallocales-1.5.3.tgz#b5978462340da1502502c3fde1c4abccff8f3b8e"
-  integrity sha512-QVBnSPZ32Y80wkXbf36hP9VbyklbOb8edppxFcgO9Lbd47zagllw65Y81QOHEn/j11JcTn2OhW0vea95LHvQmA==
-  dependencies:
-    cldr-core "38"
-    tslib "^2.0.1"
-
-"@formatjs/intl-locale@^2.4.13":
-  version "2.4.13"
-  resolved "https://registry.yarnpkg.com/@formatjs/intl-locale/-/intl-locale-2.4.13.tgz#f27d1525e116b305db3446974a0c3b11768f3ef4"
-  integrity sha512-hrglCuFjRpMrutmuL+Ck84KBxeHhouk7d5B/G9kqHL4zmrW6AsBwU+0KeyvareiY3MWzYZhQj1Nm3JEGulQRUQ==
-  dependencies:
-    "@formatjs/ecma402-abstract" "1.5.1"
-    "@formatjs/intl-getcanonicallocales" "1.5.3"
-    cldr-core "38"
-    tslib "^2.0.1"
-
 "@graphql-typed-document-node/core@^3.0.0":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@graphql-typed-document-node/core/-/core-3.1.0.tgz#0eee6373e11418bfe0b5638f654df7a4ca6a3950"
@@ -1397,11 +1372,6 @@ classnames@2.2.6:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
   integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
-
-cldr-core@38:
-  version "38.0.0"
-  resolved "https://registry.yarnpkg.com/cldr-core/-/cldr-core-38.0.0.tgz#f54a5dfd222c79a050f1fe8e87ad9764f16fb840"
-  integrity sha512-WkjA4zo5rLT/BWTZAxHJ0lJXwI33gCYucEz1+CpoI8Wu+rr5IrC57wyNXyrNNMdxfDE5RsWi/JCQ9qnG8sHTiw==
 
 cliui@^5.0.0:
   version "5.0.0"
@@ -5230,11 +5200,6 @@ tslib@^1.10.0, tslib@^1.14.1, tslib@^1.9.0, tslib@^1.9.3:
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
-
-tslib@^2.0.1:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.1.0.tgz#da60860f1c2ecaa5703ab7d39bc05b6bf988b97a"
-  integrity sha512-hcVC3wYEziELGGmEEXue7D75zbwIIVUMWAVbHItGPx0ziyXxrOMQx4rQEVEV45Ut/1IotuEvwqPopzIOkDMf0A==
 
 tty-browserify@0.0.0:
   version "0.0.0"
