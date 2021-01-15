@@ -17,9 +17,7 @@ export default function Home() {
           <MenuList></MenuList>
         </Container>
       </header>
-      <main className={styles.main}>
-        <ProductCard />
-      </main>
+      <main className={styles.main}></main>
 
       <footer className={styles.footer}>
         <a
