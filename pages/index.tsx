@@ -1,9 +1,9 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import MenuList from "../component/website/menu/MenuList";
-import Container from "../component/website/elemets/Container";
-import React from 'react';
-import { ProductCard } from 'component/ProductCard/ProductCard';
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
+import React from "react";
+import MenuList from "src/component/website/menu/MenuList";
+import Container from "src/component/website/elemets/Container";
+import { ProductCard } from "src/component/ProductCard/ProductCard";
 
 export default function Home() {
   return (
@@ -16,7 +16,6 @@ export default function Home() {
         <Container>
           <MenuList></MenuList>
         </Container>
-
       </header>
       <main className={styles.main}>
         <ProductCard />
@@ -32,5 +31,5 @@ export default function Home() {
         </a>
       </footer>
     </div>
-  )
+  );
 }
