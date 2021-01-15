@@ -20,11 +20,8 @@ export default function Home() {
       <main className={styles.main}></main>
 
       <footer className={styles.footer}>
-        <a
-          href=""
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="#">
+          <img src='kmasoft.png' height="50px" />
           Design by KMASoft
         </a>
       </footer>
