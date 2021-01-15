@@ -1,5 +1,4 @@
 import React from "react";
-import { FormattedNumber } from "react-intl";
 
 type PriceProps = {
   price: number;

@@ -1,4 +1,3 @@
-import { CardMedia, Grid, Typography } from "@material-ui/core";
 import React from "react";
 import { Product } from "src/models/Product";
 import { DescriptionCar } from "./DescriptionCar";
