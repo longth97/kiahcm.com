@@ -8,7 +8,7 @@ type DescriptionProps = {
 export const DescriptionCar = (props: DescriptionProps) => {
     return (
         <div className="description">
-            <Typography>
+            <Typography >
                 {props.description}
             </Typography>
             <style jsx>{`
