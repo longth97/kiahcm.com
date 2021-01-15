@@ -1,7 +1,7 @@
 
-import CONFIG from "../../../web.config";
 import { useRouter } from "next/router";
 import { useRef, useState, useEffect } from "react";
+import CONFIG from "web.config";
 
 
 const Menu = ({ open, setOpen, status, setContext }) => {
