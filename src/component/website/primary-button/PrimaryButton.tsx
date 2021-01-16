@@ -17,13 +17,17 @@ export default function PrimaryButton ( props : PrimaryButton ){
 
             await props.functionInput();
 
-            router.push(props.href);
+            if(props.href){
+                
+                router.push(props.href);
+                
+            }
 
         }else{
             if(props.href){
                 
                 router.push(props.href);
-                
+
             }
         }
         
