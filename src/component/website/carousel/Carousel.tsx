@@ -3,8 +3,8 @@ import { ReactNode } from "react";
 import Slider from "react-slick";
 
 type Carousel = {
-    children: ReactNode,
-    data ?: any,
+    // children: ReactNode,
+    data ?: string[],
 
 }
 
