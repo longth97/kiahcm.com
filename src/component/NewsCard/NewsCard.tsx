@@ -65,12 +65,20 @@ export const NewsCard = (props: NewsCardProps) => {
                         position: relative;
                         width: 100%;
                         text-align: center;
+<<<<<<< HEAD
                         h3 { 
+=======
+                        .title { 
+>>>>>>> 1f96bc7... imp news card
                             font-family: 'Roboto-Regular';
                             font-size: 1.15em;
                             font-weight: 700;
                         }
+<<<<<<< HEAD
                         p {
+=======
+                        .description {
+>>>>>>> 1f96bc7... imp news card
                             font-family: 'Roboto-Thin';
                             font-size: .9em;
                         }
