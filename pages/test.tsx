@@ -4,27 +4,22 @@ import React from "react";
 import MenuList from "src/component/website/menu/MenuList";
 import Container from "src/component/website/elemets/Container";
 import { ProductCard } from "src/component/ProductCard/ProductCard";
-
+import Carousel from "src/component/website/carousel/Carousel";
+import MasterPage from "src/component/website/master/MasterPage";
 export default function Home() {
   return (
-    <div >
-      <Head>
-        <title>Trang chủ - KIA Gò Vấp</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <header>
-        <Container>
-          <MenuList></MenuList>
-        </Container>
-      </header>
-      <main ></main>
 
-      <footer >
-        <a href="#">
-          <img src='kmasoft.png' height="50px" />
-          Design by KMASoft
-        </a>
-      </footer>
-    </div>
+    <MasterPage pageName="Trang chủ">
+
+      <main id="pHome" className="pHome">
+       
+          <Carousel>
+
+          </Carousel>
+         
+      </main>
+    
+    </MasterPage>
+     
   );
 }

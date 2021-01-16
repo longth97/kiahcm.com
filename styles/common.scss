@@ -12,4 +12,15 @@ footer{
 
 .pHome{
     min-height: 80vh;
+    .slick-dots{
+        position: absolute;
+        bottom: 30px;
+    }
+    .slick-dots li button:before {
+        color: #fff;
+    }
+    .slick-dots li.slick-active button:before {
+        opacity: .75;
+        color: #fff;
+    }
 }
