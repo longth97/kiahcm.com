@@ -1,29 +1,26 @@
 import asset from "plugins/assets/asset";
 // import { ReactNode } from "react";
 import Slider from "react-slick";
+import { Image } from "src/models/Image";
 
-type Carousel = {
-    // children: ReactNode,
-    data ?: any,
-
+type CarouselProps = {
+    images?: Image[],
 }
 
-
-
-function CarouselCustomsComponent(props : Carousel) {
+function CarouselCustomsComponent(props: CarouselProps) {
 
     const fetchData = [
         {
             name: "slide 1",
-            srcImg : "/image/demo/banner-01.png"
+            srcImg: "/image/demo/banner-01.png"
         },
         {
             name: "slide 2",
-            srcImg : "/image/demo/banner-02.jpg"
+            srcImg: "/image/demo/banner-02.jpg"
         },
         {
             name: "slide 3",
-            srcImg : "/image/demo/banner-01.png"
+            srcImg: "/image/demo/banner-01.png"
         },
     ]
 
@@ -32,42 +29,40 @@ function CarouselCustomsComponent(props : Carousel) {
         infinite: true,
         arrows: true,
         centerMode: true,
-        centerPadding :0,
+        centerPadding: 0,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        
+
     };
     return <div className="carouselCustom">
 
         {
-            props.data 
+            props.images
 
-            ? <Slider {...settings}>
-                {
-                    props.data.map((value, index)=>{
-                        return (
-                            <div key={index} className="itemCarousel">
-                                {/* <h3>{value.name}</h3> */}
-                                <img src={value.srcImg}/>
-                            </div>
-                        )
-                    })
-                }
-            </Slider>
+                ? <Slider {...settings}>
+                    {
+                        props.images.map((image: Image, index: number) => {
+                            return (
+                                <div key={index} className="itemCarousel">
+                                    <img src={image.url} />
+                                </div>
+                            )
+                        })
+                    }
+                </Slider>
 
-            :<Slider {...settings}>
-                {
-                    fetchData.map((value, index) =>{
-                        return (
-                            <div key={index} className="itemCarousel">
-                                {/* <h3>{value.name}</h3> */}
-                                <img src={asset(value.srcImg)}/>
-                            </div>
-                        )
-                    })
-                }
-            </Slider>
+                : <Slider {...settings}>
+                    {
+                        fetchData.map((value, index) => {
+                            return (
+                                <div key={index} className="itemCarousel">
+                                    <img src={asset(value.srcImg)} />
+                                </div>
+                            )
+                        })
+                    }
+                </Slider>
         }
         <style jsx>{`
             img{
@@ -76,7 +71,6 @@ function CarouselCustomsComponent(props : Carousel) {
             }
         `}</style>
     </div>
-  }
-  
-  export default CarouselCustomsComponent;
-  
+}
+
+export default CarouselCustomsComponent;
