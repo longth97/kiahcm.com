@@ -1,10 +1,10 @@
 import asset from "plugins/assets/asset";
-import { ReactNode } from "react";
+// import { ReactNode } from "react";
 import Slider from "react-slick";
 
 type Carousel = {
     // children: ReactNode,
-    data ?: string[],
+    data ?: any,
 
 }
 
@@ -48,7 +48,7 @@ function CarouselCustomsComponent(props : Carousel) {
                     props.data.map((value, index)=>{
                         return (
                             <div key={index} className="itemCarousel">
-                                <h3>{value.name}</h3>
+                                {/* <h3>{value.name}</h3> */}
                                 <img src={value.srcImg}/>
                             </div>
                         )
