@@ -1,43 +1,72 @@
 
 import { useRouter } from "next/router";
+import { type } from "os";
 import { useRef, useState, useEffect } from "react";
 import CONFIG from "web.config";
 
+type MenuProps = {
+  open: boolean,
+  setOpen: Function,
+  status?: boolean,
+  setContext: Function,
 
-const Menu = ({ open, setOpen, status, setContext }) => {
+
+}
+
+const Menu = (props?: MenuProps) => {
   const router = useRouter();
   const handleClick = () => {
-    setOpen(!open);
-    setContext(true);
+    props.setOpen(!open);
+    props.setContext(true);
   }
 
   const baseUrlShare = CONFIG.NEXT_PUBLIC_BASE_URL;
+
+  // console.log(router);
   return (
-    <div className={"StyledMenu"} data-open={open}>
-      <a href={baseUrlShare}>
-        <span role="img" aria-label="Chọn chủ đề"></span>
-            Chọn chủ đề
+    //open={props.open}
+    <div className={"StyledMenu"} >
+      <a onClick={() => router.push("/")}>
+        <span role="img" aria-label="Trang chủ"></span>
+            Trang chủ
         </a>
-      <a href={baseUrlShare + "/gallery"}>
-        <span role="img" aria-label="Thư viện lời chúc"></span>
-            Thư viện lời chúc
+      <a onClick={() => router.push("/")}>
+        <span role="img" aria-label="Sản phẩm"></span>
+            Sản phẩm
         </a>
-      <a onClick={() => router.push("/gifts")}>
-        <span role="img" aria-label="Quà tặng"></span>
-            Danh sách quà tặng
+      <a onClick={() => router.push("/")}>
+        <span role="img" aria-label="Dịch vụ"></span>
+            Dịch vụ
         </a>
-      <a onClick={handleClick}>
-        <span role="img" aria-label={"T&C"}></span>
-        {"Thể lệ chương trình"}
-      </a>
+      <a onClick={() => router.push("/")}>
+        <span role="img" aria-label="Bản giá"></span>
+            Bản giá
+        </a>
+      <a onClick={() => router.push("/")}>
+        <span role="img" aria-label="Tin tức"></span>
+            Tin tức
+        </a>
+      <a onClick={() => router.push("/")}>
+        <span role="img" aria-label="Tin tức"></span>
+            Tin tức
+        </a>
+      <a onClick={() => router.push("/")}>
+        <span role="img" aria-label="Giới thiệu"></span>
+            Giới thiệu
+        </a>
+      <a onClick={() => router.push("/")}>
+        <span role="img" aria-label="Liên hệ"></span>
+            Liên hệ
+        </a>
+
       <style jsx>{`
             .StyledMenu{
                 z-index: 1;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                background: #002f0cf5;
-                transform: ${open ? 'translateX(0)' : 'translateX(-100%)'};
+                background: #b90000;
+                transform: ${props.open ? 'translateX(0)' : 'translateX(-100%)'};
                 height: 100vh;
                 text-align: left;
                 padding: 2rem;
@@ -51,7 +80,7 @@ const Menu = ({ open, setOpen, status, setContext }) => {
                     }
 
                 a {
-                    font-size: 2rem;
+                    font-size: 1rem;
                     text-transform: uppercase;
                     padding: 1rem 0;
                     font-weight: bold;
@@ -59,6 +88,7 @@ const Menu = ({ open, setOpen, status, setContext }) => {
                     color: #fff;
                     text-decoration: none;
                     transition: color 0.3s linear;
+                    cursor: pointer;
 
                     @media (max-width: 576px) {
                     font-size: 1.5rem;
@@ -66,7 +96,7 @@ const Menu = ({ open, setOpen, status, setContext }) => {
                     }
 
                     &:hover {
-                    color: #343078;
+                    color: #000;
                     }
                 }
                 }    
@@ -75,18 +105,20 @@ const Menu = ({ open, setOpen, status, setContext }) => {
   )
 }
 
-type BurgerProps = {
-  open?: boolean;
-  setOpen?: Function;
+type Burger = {
+  open: boolean,
+  setOpen: Function,
 }
 
-const Burger = (props: BurgerProps) => {
+const Burger = (props: Burger) => {
   return (
-    <div className={"StyledBurger"} data-open={props.open} onClick={() => props.setOpen(!open)}>
+    //open={open}
+    <div className={"StyledBurger"} onClick={() => props.setOpen(!props.open)}>
       <div />
       <div />
       <div />
       <style jsx>{`
+
         .StyledBurger{
             position: absolute;
             top: 5%;
@@ -109,23 +141,23 @@ const Burger = (props: BurgerProps) => {
             div {
                 width: 2rem;
                 height: 0.25rem;
-                background: ${open ? '#FFF' : '#EFFFFA'};
+                background: ${props.open ? '#FFF' : '#b90000'};
                 border-radius: 10px;
                 transition: all 0.3s linear;
                 position: relative;
                 transform-origin: 1px;
 
                 :first-child {
-                transform: ${open ? 'rotate(45deg)' : 'rotate(0)'};
+                transform: ${props.open ? 'rotate(45deg)' : 'rotate(0)'};
                 }
 
                 :nth-child(2) {
-                opacity: ${open ? '0' : '1'};
-                transform: ${open ? 'translateX(20px)' : 'translateX(0)'};
+                opacity: ${props.open ? '0' : '1'};
+                transform: ${props.open ? 'translateX(20px)' : 'translateX(0)'};
                 }
 
                 :nth-child(3) {
-                transform: ${open ? 'rotate(-45deg)' : 'rotate(0)'};
+                transform: ${props.open ? 'rotate(-45deg)' : 'rotate(0)'};
                 }
             }
             }
@@ -136,6 +168,7 @@ const Burger = (props: BurgerProps) => {
 
 
 export default function MenuDemo() {
+
   const [open, setOpen] = useState(false);
   const node = useRef();
   const [status, setStatus] = useState(false);
@@ -145,6 +178,8 @@ export default function MenuDemo() {
   }, [status])
 
   const handleOutSidePopup = () => setStatus(false);
+
+
 
   return (
     <div className="menuCustom_su">
@@ -157,6 +192,7 @@ export default function MenuDemo() {
           setContext={setStatus}
         />
       </div>
+
     </div>
   )
 }
