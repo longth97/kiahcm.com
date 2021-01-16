@@ -12,6 +12,19 @@ footer{
 
 .pHome{
     min-height: 80vh;
+    .body-content {
+        padding-left: 100px;
+        padding-right:100px;
+        .newsCard{
+            cursor: pointer;
+            &:hover {
+                .dateTime {
+                    background: #ed1c24;
+                    color: #fff;
+                }
+            }
+        }
+    }
     .slick-dots{
         position: absolute;
         bottom: 30px;
