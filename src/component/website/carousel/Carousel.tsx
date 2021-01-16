@@ -26,10 +26,11 @@ function CarouselCustomsComponent(props: CarouselProps) {
 
     const settings = {
         dots: true,
-        infinite: true,
+        // infinite: true,
         arrows: true,
-        centerMode: true,
-        centerPadding: 0,
+        // centerMode: true,
+        // centerPadding: 0,
+        autoplaySpeed: true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
