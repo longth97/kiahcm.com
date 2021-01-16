@@ -4,7 +4,7 @@ import Slider from "react-slick";
 
 type Carousel = {
     children: ReactNode,
-    data ?: json,
+    data ?: any,
 
 }
 
