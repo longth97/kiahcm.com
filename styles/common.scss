@@ -1,0 +1,15 @@
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: solid 1px #f3f3f3;
+    padding: 20px 0;
+    a{
+        display: flex;
+        align-items: center;
+    }
+}
+
+.pHome{
+    min-height: 80vh;
+}

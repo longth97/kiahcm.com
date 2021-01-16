@@ -4,7 +4,10 @@ import { useRouter } from "next/router";
 // import { NextSeo } from 'next-seo';
 import asset from "plugins/assets/asset";
 import { type } from "os";
-import { ReactNode } from "react";
+import { ReactNode } from "react"
+import React from "react";
+import MenuList from "src/component/website/menu/MenuList";
+import Container from "src/component/website/elemets/Container";
 
 type Props ={
   pageName ?: string,
@@ -43,7 +46,18 @@ const BlankMasterPage = (props : Props) => {
 
         <link href={asset("/dashkit/fonts/cerebrisans/cerebrisans.css")} rel="stylesheet" />
       </Head>
-      {props.children}
+      <header>
+        <Container>
+          <MenuList></MenuList>
+        </Container>
+      </header>
+        {props.children}
+      <footer>
+        <a href="#">
+          <img src='kmasoft.png' height="50px" />
+          <span> Design by KMASoft</span>
+        </a>
+      </footer>
     </>
   );
 };
