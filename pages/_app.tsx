@@ -8,8 +8,10 @@ import { AppProps } from "next/app";
 import React from "react";
 import { ApolloProvider } from "@apollo/client";
 import { client } from "../apollo/apollo";
+import moment from "moment";
 
 function App({ Component, pageProps }: AppProps) {
+  moment.locale("vi")
   return (
     <ApolloProvider client={client}>
       <Component {...pageProps} />
