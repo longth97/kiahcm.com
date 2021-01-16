@@ -1,11 +1,11 @@
 
 import CONFIG from "web.config";
-import {useState, useEffect, useRef} from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import { assertInputObjectType } from "graphql";
 import asset from "plugins/assets/asset";
 
-export default function menuCustomList () {
+export default function menuCustomList() {
   const node = useRef();
   const router = useRouter();
   const baseUrlShare = CONFIG.NEXT_PUBLIC_BASE_URL;
@@ -13,35 +13,35 @@ export default function menuCustomList () {
   return (
     <div className="menuCustomList">
       <div ref={node}>
-            <a onClick={()=>router.push("/")} className="logoDesktop">
-              <img src={asset("/image/demo/logo1.png")}/>
-            </a>
-            <a href={baseUrlShare}>
-                <span role="img" aria-label="Trang chủ"></span>
+        <a onClick={() => router.push("/")} className="logoDesktop">
+          <img src="logo.jpg"/>
+        </a>
+        <a href={baseUrlShare}>
+          <span role="img" aria-label="Trang chủ"></span>
                 Trang chủ
             </a>
-            <a href={baseUrlShare}>
-                <span role="img" aria-label="Sản phẩm"></span>
+        <a href={baseUrlShare}>
+          <span role="img" aria-label="Sản phẩm"></span>
                 Sản phẩm
             </a>
-            <a href={baseUrlShare}>
-                <span role="img" aria-label="Dịch vụ"></span>
+        <a href={baseUrlShare}>
+          <span role="img" aria-label="Dịch vụ"></span>
                 Dịch vụ
             </a>
-            <a href={baseUrlShare}>
-                <span role="img" aria-label="Bản giá"></span>
+        <a href={baseUrlShare}>
+          <span role="img" aria-label="Bản giá"></span>
                 Bản giá
             </a>
-            <a href={baseUrlShare+"/gallery"}>
-                <span role="img" aria-label="Tin tức"></span>
+        <a href={baseUrlShare + "/gallery"}>
+          <span role="img" aria-label="Tin tức"></span>
                 Tin tức
             </a>
-            <a href={baseUrlShare+"/gallery"}>
-                <span role="img" aria-label="Giới thiệu"></span>
+        <a href={baseUrlShare + "/gallery"}>
+          <span role="img" aria-label="Giới thiệu"></span>
                 Giới thiệu
             </a>
-            <a onClick={()=>router.push("/gifts")}>
-                <span role="img" aria-label="Quà tặng"></span>
+        <a onClick={() => router.push("/gifts")}>
+          <span role="img" aria-label="Quà tặng"></span>
                 Liên hệ
             </a>
       </div>
@@ -70,6 +70,9 @@ export default function menuCustomList () {
                   transition: 0.2s;
                   color: seagreen;
                 }
+                img {
+                  width: 100px;
+                }
             }
         }
         .logoDesktop{
@@ -85,5 +88,5 @@ export default function menuCustomList () {
         }
       `}</style>
     </div>
-  )  
+  )
 }
