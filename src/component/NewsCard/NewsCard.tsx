@@ -14,23 +14,23 @@ export const NewsCard = (props: NewsCardProps) => {
 
         <div className="newsCard">
             <div className="dateTime">
-                <div className="day">
-                    {moment(props.date).format('Do')}
-                </div>
-                <div className="month">
+                <span className="day">
+                    {moment(props.date).format('Do')} <br />
+                </span>
+                <span className="month">
                     {moment(props.date).format('MMMM')}
-                </div>
+                </span>
             </div>
             <div className="image" >
                 <img src={props.url} />
             </div>
             <div className="content">
-                <div className="title">
+                <h3>
                     {props.title}
-                </div>
-                <div className="description">
+                </h3>
+                <p >
                     {props.description}
-                </div>
+                </p>
             </div>
             <style jsx>
                 {`
@@ -65,12 +65,12 @@ export const NewsCard = (props: NewsCardProps) => {
                         position: relative;
                         width: 100%;
                         text-align: center;
-                        .title { 
+                        h3 { 
                             font-family: 'Roboto-Regular';
                             font-size: 1.15em;
                             font-weight: 700;
                         }
-                        .description {
+                        p {
                             font-family: 'Roboto-Thin';
                             font-size: .9em;
                         }
