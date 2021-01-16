@@ -38,7 +38,8 @@ export default function Home() {
         <Carousel />
         <div className="body-content">
           {
-            dummyData.map((e) => <NewsCard
+            dummyData.map((e, i) => <NewsCard
+              key={i}
               date={e.date}
               url={e.image}
               title={e.title}

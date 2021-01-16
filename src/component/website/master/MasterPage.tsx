@@ -9,12 +9,12 @@ import React from "react";
 import MenuList from "src/component/website/menu/MenuList";
 import Container from "src/component/website/elemets/Container";
 
-type Props ={
-  pageName ?: string,
-  children : ReactNode,
+type Props = {
+  pageName?: string,
+  children: ReactNode,
 }
 
-const BlankMasterPage = (props : Props) => {
+const BlankMasterPage = (props: Props) => {
   const router = useRouter();
 
   return (
@@ -27,7 +27,7 @@ const BlankMasterPage = (props : Props) => {
       <Head>
 
         <title>
-          {CONFIG.site.title} | {props.pageName || "Trang chủ"}
+          {props.pageName || "Trang chủ"} | {CONFIG.site.title}
         </title>
 
         <meta name="description" content={CONFIG.site.description}></meta>
@@ -51,7 +51,7 @@ const BlankMasterPage = (props : Props) => {
           <MenuList></MenuList>
         </Container>
       </header>
-        {props.children}
+      {props.children}
       <footer>
         <a href="#">
           <img src='kmasoft.png' height="50px" />

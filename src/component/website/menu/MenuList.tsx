@@ -68,7 +68,7 @@ export default function menuCustomList() {
                 align-items: center;
                 &:hover{
                   transition: 0.2s;
-                  color: seagreen;
+                  color: #ed1c24;
                 }
                 img {
                   width: 100px;
