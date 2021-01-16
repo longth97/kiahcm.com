@@ -13,17 +13,12 @@ export default function Home() {
     <MasterPage pageName="Trang chủ">
 
       <main id="pHome" className="pHome">
-       
-          <Carousel></Carousel>
 
-        <div>
-          <PrimaryButton text="xem tất cả các dòng xe" />
-        </div>
+        <Carousel />
 
-         
       </main>
-    
+
     </MasterPage>
-     
+
   );
 }

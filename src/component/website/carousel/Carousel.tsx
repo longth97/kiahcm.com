@@ -7,7 +7,7 @@ type CarouselProps = {
     images?: Image[],
 }
 
-function CarouselCustomsComponent(props: CarouselProps) {
+function CarouselCustomsComponent(props?: CarouselProps) {
 
     const fetchData = [
         {
