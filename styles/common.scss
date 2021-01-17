@@ -11,12 +11,16 @@ footer{
 }
 
 .pHome{
-    min-height: 80vh;
     .body-content {
         padding-left: 100px;
         padding-right:100px;
+        display: grid;
+        background: red;
+        grid-gap: 50px 50px;
+        grid-template: subgrid;
         .newsCard{
             cursor: pointer;
+            max-width: 30%;
             &:hover {
                 .dateTime {
                     background: #ed1c24;

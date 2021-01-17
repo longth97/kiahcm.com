@@ -8,7 +8,9 @@ export default function Home() {
     <MasterPage pageName="Trang chủ">
 
       <main id="pHome" className="pHome">
-        <div className="body-content"></div>
+        <div className="body-content">
+          
+        </div>
       </main>
 
     </MasterPage>
