@@ -1,17 +1,14 @@
 type Title = {
-    value : string,
-   
+    value: string,
+
 }
 
-export default function Title ( props : Title ){
-
+export default function Title(props: Title) {
     return <h2 className="title"  >
-
-        <b> 
+        <b>
             {props.value}
         </b>
-
-       <style jsx>{`
+        <style jsx>{`
             .title {
                 color: #ed340c;
                 font-size: 2vw;
@@ -40,6 +37,5 @@ export default function Title ( props : Title ){
                 }
             }
        `}</style>
-
     </h2>
 }

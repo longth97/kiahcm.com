@@ -7,6 +7,7 @@ import { ProductCard } from "src/component/ProductCard/ProductCard";
 import { TitleHeader } from "src/component/TitleHeader/TitleHeader";
 import CustomCarousel from "src/component/website/carousel/Carousel";
 import MasterPage from "src/component/website/master/MasterPage";
+import Title from "src/component/website/title/Title";
 import { Home } from "src/models/Home";
 import { HomeQuery } from "src/services/homeQuery";
 
@@ -16,10 +17,11 @@ export default function HomePage() {
   if (error) return <h1>Error: {error.message}</h1>
   return (
     <MasterPage pageName="Trang chủ">
+      <div className="body-carousel">
+        <CustomCarousel images={data.home.hotImage.images} />
+      </div>
       <main id="pHome" className="pHome">
-        <div className="body-carousel">
-          <CustomCarousel images={data.home.hotImage.images} />
-        </div>
+
         <div className="body-products">
           {
             data.home.products.map((e, i) =>
@@ -34,7 +36,7 @@ export default function HomePage() {
             )
           }
         </div>
-        <TitleHeader title="Tin tức" />
+        <Title value="Tin tức" />
         <div className="body-news">
           {
             data.home.news.map((e, i) => <NewsCard

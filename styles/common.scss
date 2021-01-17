@@ -11,8 +11,9 @@ footer{
 }
 
 .pHome{
+    padding: 0px 100px 0px 100px;
     .body-products{
-        padding: 50px 100px 50px 100px;
+        padding: 50px 0px 50px 0px;
         display: grid;
         grid-gap: 50px 50px;
         grid-template-columns: 1fr 1fr ;
@@ -29,7 +30,7 @@ footer{
         }
     }
     .body-news{
-        padding: 50px 100px 50px 100px;
+        padding: 50px 0px 50px 0px;
         display: grid;
         grid-gap: 50px 50px;
         grid-template-columns: 1fr 1fr 1fr;
