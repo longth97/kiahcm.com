@@ -22,8 +22,9 @@ export default function HomePage() {
         </div>
         <div className="body-products">
           {
-            data.home.products.map((e) =>
+            data.home.products.map((e, i) =>
               <ProductCard
+                key={i}
                 id={e.id}
                 name={e.name}
                 price={e.price}
