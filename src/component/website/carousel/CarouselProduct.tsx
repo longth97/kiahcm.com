@@ -11,27 +11,28 @@ type CarouselProps = {
 type CarouselPopupProps = {
     images ?: Image[],
     status ?: boolean,
-    // handleClose : boolean,
+    handleClose : Function,
 }
 
 const fetchData = [
     {
         name: "slide 1",
-        srcImg: "/image/demo/banner-01.png"
+        srcImg: "/image/demo/products/sp-01.png"
     },
     {
         name: "slide 2",
-        srcImg: "/image/demo/banner-02.jpg"
+        srcImg: "/image/demo/products/sp-02.png"
     },
     {
         name: "slide 3",
-        srcImg: "/image/demo/banner-01.png"
+        srcImg: "/image/demo/products/sp-03.png"
     },
 ]
 
 function CarouselProduct(props?: CarouselProps) {
 
     const settings = {
+        
         dots: true,
         // infinite: true,
         arrows: true,
@@ -46,8 +47,7 @@ function CarouselProduct(props?: CarouselProps) {
 
     const [statusShow, setStatusShow] = useState (false);
 
-    const handleShow = ()=> setStatusShow(true);
-    const handleClose = ()=> setStatusShow(false);
+    const handleShowHide = () => setStatusShow(!statusShow);
 
     return <div className="carouselProduct">
 
@@ -58,7 +58,7 @@ function CarouselProduct(props?: CarouselProps) {
                     {
                         props.images.map((image: Image, index: number) => {
                             return (
-                                <div key={index} className="itemCarousel" onClick={handleShow}>
+                                <div key={index} className="itemCarousel" onClick={handleShowHide}>
                                     <img src={image.url} />
                                 </div>
                             )
@@ -70,7 +70,7 @@ function CarouselProduct(props?: CarouselProps) {
                     {
                         fetchData.map((value, index) => {
                             return (
-                                <div key={index} className="itemCarousel" onClick={handleShow}>
+                                <div key={index} className="itemCarousel" onClick={handleShowHide}>
                                     <img src={asset(value.srcImg)} />
                                 </div>
                             )
@@ -81,14 +81,19 @@ function CarouselProduct(props?: CarouselProps) {
 
         {
             props.images 
-            ? <PopupView status={statusShow} images={props.images} /> 
-            : <PopupView status={statusShow}/>
+            ? <PopupView status={statusShow} handleClose={handleShowHide}  images={props.images} /> 
+            : <PopupView status={statusShow} handleClose={handleShowHide}/>
         }
 
         <style jsx>{`
             img{
                 display:block;
                 width:100%;
+            }
+            .itemCarousel{
+                &:focus{
+                    outline: none;
+                }
             }
         `}</style>
     </div>
@@ -140,26 +145,34 @@ const PopupView = ( props :  CarouselPopupProps)=>{
                         }
                     </Slider>
             }
-           
+            <p className="iconClosePopup" onClick={ () => props.handleClose() }><span></span></p>
         </div>
         
 
         
 
         <style jsx>{`
+
+            .itemCarousel{
+                &:focus{
+                    outline: none;
+                }
+            }
+
             .carouselPopupView{
-                display: block;
+                display: flex;
                 margin-top: auto;
                 margin-bottom: auto;
-                padding: 50px;
+                padding: 0;
                 position: fixed;
                 width: 0;
                 height:0;
                 transition: 0.4s;
                 opacity:0;
-                left:0;
-                top:0;
+                left:50%;
+                top:50%;
                 transform: translate(-50, -50%) scale(0);
+                overflow: hidden;
                 
                 img{
                     display:block;
@@ -171,7 +184,7 @@ const PopupView = ( props :  CarouselPopupProps)=>{
                 position: relative;
                 width:100%;
                 max-width: 1220px;
-                padding: 20px;
+                padding: 25px;
                 margin: auto;
                 
             }
@@ -181,11 +194,57 @@ const PopupView = ( props :  CarouselPopupProps)=>{
                 height: 30px;
                 top: 0;
                 right: 0;
-                background-color: #555;
+                border: solid 1px #fff;
+                background-color: #333;
+                border-radius: 5px;
+                box-sizing: border-box;
+                cursor: pointer;
+                transition: 0.3s;
+                span{
+                    position: relative;
+                    display: flex;
+                    width:100%;
+                    height:100%;
+                    border-radius: 5px;
+                    box-sizing: border-box;
+                    transition: 0.3s;
+
+                    &::after{
+                        content:"";
+                        position: absolute;
+                        width:100%;
+                        height: 2px;
+                        border-radius: 3px;
+                        top: 49%;
+                        left: 50%;
+                        transform: translate(-50%,0) rotate(-45deg);
+                        background-color: #fff;
+                        transition: 0.3s;
+                    }
+                    &::before{
+                        content:"";
+                        position: absolute;
+                        width:100%;
+                        height: 2px;
+                        border-radius: 3px;
+                        top: 49%;
+                        left: 50%;
+                        transform: translate(-50%,0) rotate(45deg);
+                        background-color: #fff;
+                        transition: 0.3s;
+                    }
+                }
+
+                &:hover > ::before, &:hover > ::after{
+                   background-color: red;
+                }
+
+                
             }
             .carouselPopupView.show{
                 position: fixed;
                 z-index:99;
+                padding: 50px;
                 width:100vw;
                 height:100vh;
                 left:0;
@@ -193,7 +252,7 @@ const PopupView = ( props :  CarouselPopupProps)=>{
                 opacity:1;
                 background-color: rgba(0,0,0,0.5);
                 padding: 25px;
-                transform: translate(-50, -50%) scale(1);
+                transform:scale(1);
             }
         
         `}</style>
