@@ -37,7 +37,7 @@ export default function Home() {
       <main id="pHome" className="pHome">
 
         <Carousel />
-        <div className="body-content">
+        <div className="body-news">
           {
             dummyData.map((e, i) => <NewsCard
               key={i}
