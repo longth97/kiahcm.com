@@ -33,21 +33,25 @@ export const ProductCard = (props?: Product) => {
                 text-align: center;
                 color: #FFF;
             }
-            img {
-                width: 95%;
-                transition: width 0.7s, height 0.7s;
+            .box-image {
+              img {
+                transition: 0.7s;
                 position: relative;
                 z-index: 1;
+                transform: scale(1);
                 &:hover {
-                  width: 100%;
+                  transform: scale(1.2);
                 }
             }
+            }
+           
         .content {
             padding-top: .7em;
             position: relative;
             width: 100%;
             text-align: center;
             background: white;
+            z-index: 2;
             h3 { 
                 font-family: 'Roboto-Regular';
                 font-size: 1.3em;
