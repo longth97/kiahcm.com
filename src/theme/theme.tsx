@@ -19,10 +19,6 @@ export default function CustomThemeProvider(props: Props) {
                         main: "#424242",
                     },
                     divider: "#EE5123",
-                    text: {
-                        primary: "#000",
-                        secondary: "#FFF"
-                    }
                 },
             })}>
                 {props.children}
