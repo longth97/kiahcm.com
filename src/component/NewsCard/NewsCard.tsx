@@ -11,12 +11,11 @@ type NewsCardProps = {
 export const NewsCard = (props: NewsCardProps) => {
 
     return (
-
         <div className="newsCard">
             <div className="dateTime">
-                <span className="day">
+                <h3 className="day">
                     {moment(props.date).format('Do')} <br />
-                </span>
+                </h3>
                 <span className="month">
                     {moment(props.date).format('MMMM')}
                 </span>
@@ -42,7 +41,7 @@ export const NewsCard = (props: NewsCardProps) => {
                             z-index: 2;
                             border: solid 2px;
                             border-color: ${COLOR.PRIMARY_COLOR};
-                            padding: 0.5px 40px 0.5px 40px;
+                            padding: 0px 30px 0px 30px;
                             top: 10px;
                             left: -10px;
                             text-align: center;
@@ -67,12 +66,23 @@ export const NewsCard = (props: NewsCardProps) => {
                         text-align: center;
                         h3 { 
                             font-family: 'Roboto-Regular';
-                            font-size: 1.15em;
+                            font-size: 1.3em;
                             font-weight: 700;
+                            text-overflow: ellipsis;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 2;
+                            -webkit-box-orient: vertical;
+                            overflow: hidden;
                         }
                         p {
                             font-family: 'Roboto-Thin';
-                            font-size: .9em;
+                            font-size: 1.0em;
+                            text-overflow: ellipsis;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 3;
+                            -webkit-box-orient: vertical;
+                            overflow: hidden;
+                            text-align: left;
                         }
                     }
                     

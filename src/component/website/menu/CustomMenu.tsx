@@ -39,8 +39,8 @@ const Menu = (props?: MenuProps) => {
             Dịch vụ
         </a>
       <a onClick={() => router.push("/")}>
-        <span role="img" aria-label="Bản giá"></span>
-            Bản giá
+        <span role="img" aria-label="Bảng giá"></span>
+            Bảng giá
         </a>
       <a onClick={() => router.push("/")}>
         <span role="img" aria-label="Tin tức"></span>

@@ -1,6 +1,9 @@
+import { Image } from "./Image";
+
 export type Product = {
-  image: string;
+  id: any;
   name: string;
+  image: Image;
   description: string;
   href?: string | undefined;
   price: number;

@@ -7,6 +7,7 @@ import Carousel from "src/component/website/carousel/Carousel";
 import MasterPage from "src/component/website/master/MasterPage";
 import { NewsCard } from "src/component/NewsCard/NewsCard";
 import TabViewProductDetail from "src/component/Detail/TabViews";
+import Title from "src/component/website/title/Title";
 
 export default function Home() {
   const dateToFormat = new Date('1976-04-19T12:59-0500');
@@ -37,7 +38,7 @@ export default function Home() {
       <main id="pHome" className="pHome">
 
         <Carousel />
-        <div className="body-content">
+        <div className="body-news">
           {
             dummyData.map((e, i) => <NewsCard
               key={i}
@@ -48,7 +49,8 @@ export default function Home() {
             />)
           }
         </div>
-        <TabViewProductDetail />
+
+        <Title value="Tin tức"></Title>
 
       </main>
 

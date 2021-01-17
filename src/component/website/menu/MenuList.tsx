@@ -29,8 +29,8 @@ export default function menuCustomList() {
                 Dịch vụ
             </a>
         <a href={baseUrlShare}>
-          <span role="img" aria-label="Bản giá"></span>
-                Bản giá
+          <span role="img" aria-label="Bảng giá"></span>
+                Bảng giá
             </a>
         <a href={baseUrlShare + "/gallery"}>
           <span role="img" aria-label="Tin tức"></span>

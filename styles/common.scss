@@ -11,12 +11,32 @@ footer{
 }
 
 .pHome{
-    min-height: 80vh;
-    .body-content {
-        padding-left: 100px;
-        padding-right:100px;
+    padding: 0px 100px 0px 100px;
+    .body-products{
+        padding: 50px 0px 50px 0px;
+        display: grid;
+        grid-gap: 50px 50px;
+        grid-template-columns: 1fr 1fr ;
         .newsCard{
             cursor: pointer;
+            max-width: 100%;
+            &:hover {
+                .dateTime {
+                    background: #ed1c24;
+                    color: #fff;
+                    transition: 0.4s;
+                }
+            }
+        }
+    }
+    .body-news{
+        padding: 50px 0px 50px 0px;
+        display: grid;
+        grid-gap: 50px 50px;
+        grid-template-columns: 1fr 1fr 1fr;
+        .newsCard{
+            cursor: pointer;
+            max-width: 100%;
             &:hover {
                 .dateTime {
                     background: #ed1c24;

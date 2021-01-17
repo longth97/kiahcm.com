@@ -7,7 +7,7 @@ type CarouselProps = {
     images?: Image[],
 }
 
-function CarouselCustomsComponent(props?: CarouselProps) {
+function CustomCarousel(props?: CarouselProps) {
 
     const fetchData = [
         {
@@ -74,4 +74,4 @@ function CarouselCustomsComponent(props?: CarouselProps) {
     </div>
 }
 
-export default CarouselCustomsComponent;
+export default CustomCarousel;
