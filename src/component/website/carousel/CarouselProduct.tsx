@@ -54,7 +54,7 @@ function CarouselProduct(props?: CarouselProps) {
     useEffect(() => {
         // console.log(slideIndex);
         if(sliderRef3.current){
-            sliderRef3.current.slickGoTo(slideIndex);
+            // sliderRef3.current.slickGoTo(slideIndex);
         }
         
     },[slideIndex])
