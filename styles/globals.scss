@@ -28,6 +28,15 @@ font-family: 'Playfair Display', serif;
   font-weight: normal;
 }
 
+@font-face {
+  font-family: "Roboto-Bold";
+  // src: url("../public/fonts/Roboto-Light.eot");
+  src:url("../public/fonts/Roboto-Bold.ttf") format("truetype");
+   
+  font-style: normal;
+  font-weight: normal;
+}
+
   
   html,
   body {
