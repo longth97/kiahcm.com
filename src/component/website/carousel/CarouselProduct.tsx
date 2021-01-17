@@ -55,9 +55,12 @@ function CarouselProduct(props?: CarouselProps) {
         // console.log(slideIndex);
         if(sliderRef3.current){
             // sliderRef3.current.slickGoTo(slideIndex);
+            goToSlide(sliderRef3.current)
         }
         
-    },[slideIndex])
+    },[slideIndex]);
+
+    const goToSlide = (value) => value.slickGoTo(slideIndex);
 
     const settings1 = {
         
