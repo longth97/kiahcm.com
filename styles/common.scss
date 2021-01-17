@@ -11,6 +11,23 @@ footer{
 }
 
 .pHome{
+    .body-products{
+        padding: 50px 100px 50px 100px;
+        display: grid;
+        grid-gap: 50px 50px;
+        grid-template-columns: 1fr 1fr ;
+        .newsCard{
+            cursor: pointer;
+            max-width: 100%;
+            &:hover {
+                .dateTime {
+                    background: #ed1c24;
+                    color: #fff;
+                    transition: 0.4s;
+                }
+            }
+        }
+    }
     .body-news{
         padding: 50px 100px 50px 100px;
         display: grid;

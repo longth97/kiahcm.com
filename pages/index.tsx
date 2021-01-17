@@ -3,6 +3,8 @@ import { useQuery } from "@apollo/client";
 import React from "react";
 import { Loading } from "src/component/Loading/Loading";
 import { NewsCard } from "src/component/NewsCard/NewsCard";
+import { ProductCard } from "src/component/ProductCard/ProductCard";
+import { TitleHeader } from "src/component/TitleHeader/TitleHeader";
 import CustomCarousel from "src/component/website/carousel/Carousel";
 import MasterPage from "src/component/website/master/MasterPage";
 import { Home } from "src/models/Home";
@@ -18,6 +20,20 @@ export default function HomePage() {
         <div className="body-carousel">
           <CustomCarousel images={data.home.hotImage.images} />
         </div>
+        <div className="body-products">
+          {
+            data.home.products.map((e) =>
+              <ProductCard
+                id={e.id}
+                name={e.name}
+                price={e.price}
+                image={e.image}
+                description={e.description}
+              />
+            )
+          }
+        </div>
+        <TitleHeader title="Tin tức" />
         <div className="body-news">
           {
             data.home.news.map((e, i) => <NewsCard

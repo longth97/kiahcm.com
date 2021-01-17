@@ -11,7 +11,6 @@ type NewsCardProps = {
 export const NewsCard = (props: NewsCardProps) => {
 
     return (
-
         <div className="newsCard">
             <div className="dateTime">
                 <h3 className="day">
@@ -67,7 +66,7 @@ export const NewsCard = (props: NewsCardProps) => {
                         text-align: center;
                         h3 { 
                             font-family: 'Roboto-Regular';
-                            font-size: 1.15em;
+                            font-size: 1.3em;
                             font-weight: 700;
                             text-overflow: ellipsis;
                             display: -webkit-box;
@@ -77,7 +76,7 @@ export const NewsCard = (props: NewsCardProps) => {
                         }
                         p {
                             font-family: 'Roboto-Thin';
-                            font-size: .9em;
+                            font-size: 1.0em;
                             text-overflow: ellipsis;
                             display: -webkit-box;
                             -webkit-line-clamp: 3;
