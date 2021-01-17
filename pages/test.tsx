@@ -6,6 +6,7 @@ import { ProductCard } from "src/component/ProductCard/ProductCard";
 import Carousel from "src/component/website/carousel/Carousel";
 import MasterPage from "src/component/website/master/MasterPage";
 import { NewsCard } from "src/component/NewsCard/NewsCard";
+import TabViewProductDetail from "src/component/Detail/TabViews";
 
 export default function Home() {
   const dateToFormat = new Date('1976-04-19T12:59-0500');
@@ -47,7 +48,7 @@ export default function Home() {
             />)
           }
         </div>
-        {/* <TabViewProductDetail /> */}
+        <TabViewProductDetail />
 
       </main>
 
