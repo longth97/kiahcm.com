@@ -6,6 +6,7 @@ import CarouselProduct from "src/component/website/carousel/CarouselProduct";
 import MasterPage from "src/component/website/master/MasterPage";
 import DescriptionProduct from "src/component/website/description-product/DescriptionProduct";
 import TableProducts from "src/component/website/table-product/TableProduct";
+import SnowEffect from "src/component/website/effects/SnowEffect";
 
 const fetData = [
   {
@@ -64,6 +65,12 @@ export default function Home() {
           
          
           <TableProducts dataList={fetData}></TableProducts>
+
+          <div style={{width:"100%", height:"300px"}}>
+
+            <SnowEffect limit={100}></SnowEffect>
+
+          </div>
 
         </Container>
           
