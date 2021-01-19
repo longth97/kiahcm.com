@@ -50,7 +50,7 @@ export default function Home() {
           }
         </div>
 
-        <Title value="Tin tức"></Title>
+        <Title title="Tin tức"></Title>
 
       </main>
 
