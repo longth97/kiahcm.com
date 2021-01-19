@@ -18,11 +18,8 @@ export default function HomePage() {
   if (error) return <h1>Error: {error.message}</h1>
   return (
     <MasterPage pageName="Trang chủ">
-      <div className="body-carousel">
-        <CustomCarousel />
-      </div>
+      <CustomCarousel />
       <main id="pHome" className="pHome">
-
         <div className="body-products">
           {
             data.home.products.map((e, i) =>
@@ -40,7 +37,7 @@ export default function HomePage() {
         <div className="body-button">
           <PrimaryButton text={"Xem tất cả các dòng xe"} />
         </div>
-        <Title value="Tin tức" />
+        <Title title="Tin tức" />
         <div className="body-news">
           {
             data.home.news.map((e, i) => <NewsCard

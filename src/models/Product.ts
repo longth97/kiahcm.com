@@ -7,4 +7,10 @@ export type Product = {
   description: string;
   href?: string | undefined;
   price: number;
+  segment?: string;
 };
+
+
+export type Products = {
+  products: Product[]
+}

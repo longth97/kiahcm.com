@@ -1,12 +1,12 @@
 type Title = {
-    value: string,
+    title: string,
 
 }
 
 export default function Title(props: Title) {
     return <h2 className="title"  >
         <b>
-            {props.value}
+            {props.title}
         </b>
         <style jsx>{`
             .title {
