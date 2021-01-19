@@ -19,7 +19,7 @@ export default function HomePage() {
   return (
     <MasterPage pageName="Trang chủ">
       <div className="body-carousel">
-        <CustomCarousel images={data.home.hotImage.images} />
+        <CustomCarousel />
       </div>
       <main id="pHome" className="pHome">
 

@@ -1,28 +1,21 @@
+import { useQuery } from "@apollo/client";
 import asset from "plugins/assets/asset";
+import React from "react";
 // import { ReactNode } from "react";
 import Slider from "react-slick";
+import { Loading } from "src/component/Loading/Loading";
+import { HotImages } from "src/models/HotImages";
 import { Image } from "src/models/Image";
+import { CarouselQuery } from "src/services/CarouselQuery";
 
-type CarouselProps = {
-    images?: Image[],
+type HotImage = {
+    hotImage: HotImages;
 }
 
-function CustomCarousel(props?: CarouselProps) {
-
-    const fetchData = [
-        {
-            name: "slide 1",
-            srcImg: "/image/demo/banner-01.png"
-        },
-        {
-            name: "slide 2",
-            srcImg: "/image/demo/banner-02.jpg"
-        },
-        {
-            name: "slide 3",
-            srcImg: "/image/demo/banner-01.png"
-        },
-    ]
+function CustomCarousel() {
+    const { loading, error, data } = useQuery<HotImage>(CarouselQuery);
+    if (loading) return <Loading />
+    if (error) return <h1>Error: {error.message}</h1>
 
     const settings = {
         dots: true,
@@ -37,13 +30,11 @@ function CustomCarousel(props?: CarouselProps) {
 
     };
     return <div className="carouselCustom">
-
         {
-            props.images
-
+            data.hotImage.images
                 ? <Slider {...settings}>
                     {
-                        props.images.map((image: Image, index: number) => {
+                        data.hotImage.images.map((image: Image, index: number) => {
                             return (
                                 <div key={index} className="itemCarousel">
                                     <img src={image.url} />
@@ -52,18 +43,7 @@ function CustomCarousel(props?: CarouselProps) {
                         })
                     }
                 </Slider>
-
-                : <Slider {...settings}>
-                    {
-                        fetchData.map((value, index) => {
-                            return (
-                                <div key={index} className="itemCarousel">
-                                    <img src={asset(value.srcImg)} />
-                                </div>
-                            )
-                        })
-                    }
-                </Slider>
+                : <div />
         }
         <style jsx>{`
             img{
