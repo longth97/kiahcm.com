@@ -9,7 +9,7 @@ export default function SnowEffect ( ){
 
         let list : Array<String> = [];
 
-        for(let i = 0; i <= 200; i++){
+        for(let i = 0; i <= 199; i++){
             list.push(i.toString());
         }
        
