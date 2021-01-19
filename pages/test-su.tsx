@@ -68,7 +68,7 @@ export default function Home() {
 
           <div style={{width:"100%", height:"300px"}}>
 
-            <SnowEffect limit={100}></SnowEffect>
+            <SnowEffect></SnowEffect>
 
           </div>
 
