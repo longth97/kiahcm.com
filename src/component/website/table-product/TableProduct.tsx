@@ -1,10 +1,16 @@
+interface Products {
+    name : string;
+    price : string;
+    contacts : string;
+}
+
 type TableProducts = {
-    dataList ?: object[],
+    dataList ?: Products[],
 }
 
 export default function TableProducts(props: TableProducts) {
     return <div className="tableProducts"  >
-        <table border="0" cellspacing="0" cellpadding="0">
+        <table  cellSpacing="0" cellPadding="0">
             <tbody>
                 <tr>
                     <th > <span> MẪU XE</span></th>
