@@ -53,9 +53,9 @@ const BlankMasterPage = (props: Props) => {
       </header>
       {props.children}
       <footer>
-        <a href="#">
+        <a href="https://kmasoft.vn/" target="_blank">
           <img src='kmasoft.png' height="50px" />
-          <span> Design by KMASoft</span>
+          <span style={{paddingLeft: '20px'}}>Design by KMASoft</span>
         </a>
       </footer>
     </>
