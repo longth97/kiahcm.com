@@ -7,6 +7,7 @@ import { ProductCard } from "src/component/ProductCard/ProductCard";
 import { TitleHeader } from "src/component/TitleHeader/TitleHeader";
 import CustomCarousel from "src/component/website/carousel/Carousel";
 import MasterPage from "src/component/website/master/MasterPage";
+import PrimaryButton from "src/component/website/primary-button/PrimaryButton";
 import Title from "src/component/website/title/Title";
 import { Home } from "src/models/Home";
 import { HomeQuery } from "src/services/homeQuery";
@@ -35,6 +36,9 @@ export default function HomePage() {
               />
             )
           }
+        </div>
+        <div className="body-button">
+          <PrimaryButton text={"Xem tất cả các dòng xe"} />
         </div>
         <Title value="Tin tức" />
         <div className="body-news">

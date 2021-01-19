@@ -2,47 +2,32 @@
 import { useRouter } from "next/router";
 
 type PrimaryButton = {
-    text : string,
-    href ?: string,
-    functionInput ?: Function 
+    text: string,
+    href?: string,
+    functionInput?: Function
 }
 
-export default function PrimaryButton ( props : PrimaryButton ){
-
+export default function PrimaryButton(props: PrimaryButton) {
     const router = useRouter();
-
-    const handleClick = async ()=>{
-
-        if(props.functionInput){
-
+    const handleClick = async () => {
+        if (props.functionInput) {
             await props.functionInput();
-
-            if(props.href){
-                
+            if (props.href) {
                 router.push(props.href);
-                
             }
-
-        }else{
-            if(props.href){
-                
+        } else {
+            if (props.href) {
                 router.push(props.href);
-
             }
         }
-        
     }
 
-    return <span 
-
-            className="primaryButton" 
-            onClick={ handleClick } >
-
-            {props.text}
-
-       <style jsx>{`
+    return <span
+        className="primaryButton"
+        onClick={handleClick} >
+        {props.text}
+        <style jsx>{`
             .primaryButton{
-
                 position: relative;
                 border-radius: 10px;
                 cursor: pointer;
@@ -73,6 +58,5 @@ export default function PrimaryButton ( props : PrimaryButton ){
                 box-shadow: 0px 30px 40px 0px rgba(0,0,0,0.2);
             }
        `}</style>
-
     </span>
 }

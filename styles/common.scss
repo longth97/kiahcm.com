@@ -12,6 +12,7 @@ footer{
 
 .pHome{
     padding: 0px 100px 0px 100px;
+    text-align: center;
     .body-products{
         padding: 50px 0px 50px 0px;
         display: grid;
@@ -28,6 +29,9 @@ footer{
                 }
             }
         }
+    }
+    .body-button{
+        padding-bottom: 50px;
     }
     .body-news{
         padding: 50px 0px 50px 0px;
