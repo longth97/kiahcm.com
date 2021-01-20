@@ -78,7 +78,6 @@ export default function Home() {
       <style jsx>{`
         .contentProduct{
           display: flex;
-         
         }
         .contentDetails{
             width: 50%;
