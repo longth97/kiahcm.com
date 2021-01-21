@@ -7,40 +7,49 @@ import { Product } from "src/models/Product";
 import { ProductDetailQuery } from "src/services/product.detail.query";
 import MasterPage from "src/component/website/master/MasterPage";
 import Container from "src/component/website/elemets/Container";
+import TabViewProductDetail from "src/component/Detail/TabViews";
+import { IDVar } from "src/models/Id";
+import { useRouter } from "next/router";
 // import TableProducts from "src/component/website/table-product/TableProduct";
 
+type ProductVar = {
+    product: Product
+}
+
 export default function DetailPage() {
-    const { loading, error, data } = useQuery<Product>(ProductDetailQuery)
+    const router = useRouter()
+    const { loading, error, data } = useQuery<ProductVar, IDVar>(
+        ProductDetailQuery,
+        { variables: { id: `${router.query.id}` } }
+    )
     if (loading) return <Loading />
     if (error) return <h1> Error: {error.message}</h1>
     return (
         <MasterPage pageName="San pham">
-            <main id="pProduct" className="pProduct">
+            <main id="pProductDetail" className="pProductDetail">
                 <Container>
-                    <div className="contentProduct">
-
+                    <div className="description-product">
                         <div className="contentDetails carousel">
-                            <CarouselProduct images={data.imagesCarousel} />
+                            <CarouselProduct images={data.product.imagesCarousel} />
                         </div>
-
                         <div className="contentDetails description">
-                        
-                        <DescriptionProduct
-                            nameProduct={data.name}
-                            price={data.price}
-                            codeProduct={data.name}
-                        />
-
+                            <DescriptionProduct
+                                nameProduct={data.product.name}
+                                price={data.product.price}
+                                codeProduct={data.product.name}
+                            />
                         </div>
-                        
                     </div>
-                    
+                    <div className="content-product">
+                        <TabViewProductDetail
+                            description={data.product.content.markdown}
+                            feature={data.product.feature.markdown}
+                            specifications={data.product.spectifications.markdown}
+                            imagesActual={data.product.imagesActual.markdown}
+                        />
+                    </div>
                 </Container>
-
                 <style jsx>{`
-                    .contentProduct{
-                        display: flex;
-                    }
                     .contentDetails{
                         width: 50%;
                         
@@ -48,11 +57,14 @@ export default function DetailPage() {
                     .description{
                         margin-left: 2%;
                     }
+                    .content-product {
+                        padding-top: 50px;
+                    }
                 `}</style>
-              
+
             </main>
-            
+
         </MasterPage>
-        
+
     )
 }

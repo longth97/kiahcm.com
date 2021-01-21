@@ -6,6 +6,7 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import ReactMarkdown from 'react-markdown';
+import { Image } from 'src/models/Image';
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -49,13 +50,13 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 
 type DetailProps = {
-    description: string;
-    feature: string;
-    specifications: string;
-    image: string;
+    description?: string;
+    feature?: string;
+    specifications?: string;
+    imagesActual?: string;
 }
 
-export default function TabViewProductDetail(props: DetailProps) {
+export default function TabViewProductDetail(props?: DetailProps) {
     const classes = useStyles();
     const [value, setValue] = React.useState(0);
 
@@ -114,7 +115,7 @@ export default function TabViewProductDetail(props: DetailProps) {
             {/* Hình ảnh */}
             <TabPanel value={value} index={3}>
                 <ReactMarkdown
-                    source={props.image}
+                    source={props.imagesActual}
                     escapeHtml={false}
                     transformImageUri={uri =>
                         uri.startsWith("http") ? uri : `${process.env.NEXT_PUBLIC_API_URL}${uri}`

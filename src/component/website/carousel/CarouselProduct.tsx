@@ -9,26 +9,11 @@ type CarouselProps = {
 }
 
 type CarouselPopupProps = {
-    images ?: Image[],
-    status ?: boolean,
-    settings : Object,
-    handleClose : Function,
+    images?: Image[],
+    status?: boolean,
+    settings: Object,
+    handleClose: Function,
 }
-
-const fetchData = [
-    {
-        name: "slide 1",
-        srcImg: "/image/demo/products/sp-01.png"
-    },
-    {
-        name: "slide 2",
-        srcImg: "/image/demo/products/sp-02.png"
-    },
-    {
-        name: "slide 3",
-        srcImg: "/image/demo/products/sp-03.png"
-    },
-]
 
 function CarouselProduct(props?: CarouselProps) {
 
@@ -44,7 +29,7 @@ function CarouselProduct(props?: CarouselProps) {
     const sliderRef3 = useRef();
 
     useEffect(() => {
-      
+
         setNav1(sliderRef1.current)
         setNav2(sliderRef2.current)
         setNav3(sliderRef3.current)
@@ -53,17 +38,17 @@ function CarouselProduct(props?: CarouselProps) {
 
     useEffect(() => {
         // console.log(slideIndex);
-        if(sliderRef3.current){
+        if (sliderRef3.current) {
             // sliderRef3.current.slickGoTo(slideIndex);
             goToSlide(sliderRef3.current)
         }
-        
-    },[slideIndex]);
+
+    }, [slideIndex]);
 
     const goToSlide = (value) => value.slickGoTo(slideIndex);
 
     const settings1 = {
-        
+
         dots: false,
         arrows: true,
         autoplaySpeed: true,
@@ -71,8 +56,8 @@ function CarouselProduct(props?: CarouselProps) {
         slidesToShow: 1,
         slidesToScroll: 1,
         asNavFor: nav2,
-        ref : slider => (sliderRef1.current = slider),
-        
+        ref: slider => (sliderRef1.current = slider),
+
     };
 
     const settings2 = {
@@ -85,9 +70,9 @@ function CarouselProduct(props?: CarouselProps) {
         slidesToShow: 3,
         slidesToScroll: 1,
         asNavFor: nav1,
-        ref : slider => (sliderRef2.current = slider),
-        afterChange: () => setUpdateCount( updateCount + 1 ),
-        beforeChange: (current, next) => setSlideIndex( next ),
+        ref: slider => (sliderRef2.current = slider),
+        afterChange: () => setUpdateCount(updateCount + 1),
+        beforeChange: (current, next) => setSlideIndex(next),
 
     };
 
@@ -99,85 +84,51 @@ function CarouselProduct(props?: CarouselProps) {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        ref : slider => (sliderRef3.current = slider),
+        ref: slider => (sliderRef3.current = slider),
 
     };
-    
-    const [statusShow, setStatusShow] = useState (false);
 
-    useEffect(() =>{},[])
+    const [statusShow, setStatusShow] = useState(false);
+
+    useEffect(() => { }, [])
 
     const handleShowHide = () => setStatusShow(!statusShow);
 
     return <div className="carouselProduct">
+        <>
+            <div className="contentCarouselProduct big" onClick={handleShowHide} >
+                <Slider {...settings1}>
+                    {
+                        props.images.map((image: Image, index: number) => {
+                            return (
+                                <div key={index} className="itemCarousel" >
+                                    <img src={image.url} />
+                                </div>
+                            )
+                        })
+                    }
+                </Slider>
+            </div>
+            <div className="contentCarouselProduct mini" >
+                <Slider {...settings2}>
+                    {
+                        props?.images?.map((image: Image, index: number) => {
+                            return (
+                                <div key={index} className="itemCarousel">
+                                    <img src={image.url} />
+                                </div>
+                            )
+                        })
+                    }
+                </Slider>
+            </div>
+        </>
+
 
         {
             props.images
-
-                ? <>
-                    <div className="contentCarouselProduct big" onClick={handleShowHide} >
-                        <Slider {...settings1}>
-                            {
-                                props.images.map((image: Image, index: number) => {
-                                    return (
-                                        <div key={index} className="itemCarousel" >
-                                            <img src={image.url} />
-                                        </div>
-                                    )
-                                })
-                            }
-                        </Slider>
-                    </div>
-                    <div className="contentCarouselProduct mini" >
-                        <Slider {...settings2}>
-                            {
-                                props.images.map((image: Image, index: number) => {
-                                    return (
-                                        <div key={index} className="itemCarousel">
-                                            <img src={image.url} />
-                                        </div>
-                                    )
-                                })
-                            }
-                        </Slider>
-                    </div>
-                </>
-
-                : <>
-                    <div className="contentCarouselProduct big" onClick={handleShowHide}>
-                        <Slider {...settings1}>
-                            {
-                                fetchData.map((value, index) => {
-                                    return (
-                                        <div key={index} className="itemCarousel" >
-                                            <img src={asset(value.srcImg)} />
-                                        </div>
-                                    )
-                                })
-                            }
-                        </Slider>
-                    </div>
-                    <div className="contentCarouselProduct mini" >
-                        <Slider {...settings2}>
-                            {
-                                fetchData.map((value, index) => {
-                                    return (
-                                        <div key={index} className="itemCarousel">
-                                            <img src={asset(value.srcImg)} />
-                                        </div>
-                                    )
-                                })
-                            }
-                        </Slider>
-                    </div>
-                </>
-        }
- 
-
-        {
-            props.images 
-            ? <PopupView settings={settings3} status={statusShow} handleClose={handleShowHide} images={props.images} /> 
-            : <PopupView settings={settings3} status={statusShow} handleClose={handleShowHide}/>
+                ? <PopupView settings={settings3} status={statusShow} handleClose={handleShowHide} images={props.images} />
+                : <PopupView settings={settings3} status={statusShow} handleClose={handleShowHide} />
         }
 
         <style jsx>{`
@@ -206,41 +157,25 @@ function CarouselProduct(props?: CarouselProps) {
 export default CarouselProduct;
 
 
-const PopupView = ( props :  CarouselPopupProps)=>{
+const PopupView = (props: CarouselPopupProps) => {
 
-    return <div className={ props.status ? `carouselPopupView show` : `carouselPopupView hide` }>
+    return <div className={props.status ? `carouselPopupView show` : `carouselPopupView hide`}>
 
         <div className="contentPopupView">
-            {
-                props.images
-
-                    ? <Slider {...props.settings}>
-                        {
-                            props.images.map((image: Image, index: number) => {
-                                return (
-                                    <div key={index} className="itemCarousel">
-                                        <img src={image.url} />
-                                    </div>
-                                )
-                            })
-                        }
-                    </Slider>
-
-                    : <Slider {...props.settings}>
-                        {
-                            fetchData.map((value, index) => {
-                                return (
-                                    <div key={index} className="itemCarousel">
-                                        <img src={asset(value.srcImg)} />
-                                    </div>
-                                )
-                            })
-                        }
-                    </Slider>
-            }
-            <p className="iconClosePopup" onClick={ () => props.handleClose() }><span></span></p>
+            <Slider {...props.settings}>
+                {
+                    props.images.map((image: Image, index: number) => {
+                        return (
+                            <div key={index} className="itemCarousel">
+                                <img src={image.url} />
+                            </div>
+                        )
+                    })
+                }
+            </Slider>
+            <p className="iconClosePopup" onClick={() => props.handleClose()}><span></span></p>
         </div>
-        
+
 
         <style jsx>{`
             .carouselPopupView{

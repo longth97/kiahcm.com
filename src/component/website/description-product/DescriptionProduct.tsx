@@ -24,7 +24,13 @@ export default function Description(props: DescriptionProduct) {
                 {props.gallery}
             </span>
         </h4>
-        <div className="price"><span>{props.price}</span></div>
+        <div className="price">
+            <span> {new Intl.NumberFormat("vi-VN", {
+                style: "currency",
+                currency: "VND",
+            }).format(props.price)}
+            </span>
+        </div>
 
         <h2 className="nameProduct"> {props.nameProduct} </h2>
 

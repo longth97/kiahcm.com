@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 export const ProductDetailQuery = gql`
-query{
-    product(where: {id: "ckk0szcgo4trq0c98lt024w8p"}){
+query ($id: ID!){
+    product(where: {id: $id}){
       name
       imagesCarousel{
         url
@@ -10,16 +10,20 @@ query{
       price
       content{
         html
+        markdown
       }
       spectifications{
         html
+        markdown
       }
       feature{
         html
+        markdown
       }
       
       imagesActual{
         html
+        markdown
       }
       
     }

@@ -1,4 +1,5 @@
 import { Image } from "./Image";
+import { RichText } from "./RichText";
 
 export type Product = {
   id?: any;
@@ -6,7 +7,10 @@ export type Product = {
   image?: Image;
   imagesCarousel?: Image[];
   description?: string;
-  images?: Image[];
+  feature?: RichText;
+  spectifications?: RichText;
+  content?: RichText;
+  imagesActual?: RichText;
   href?: string | undefined;
   price?: number;
   segment?: string;
