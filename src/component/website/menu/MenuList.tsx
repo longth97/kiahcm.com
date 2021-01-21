@@ -29,7 +29,7 @@ export default function menuCustomList() {
     <div className={ fixed === true ? "menuCustomList fixed": "menuCustomList" }>
       <div ref={node}>
         <a onClick={() => router.push("/")} className="logoDesktop">
-          <img src="logo.jpg"/>
+          <img src={asset("/logo.jpg")}/>
         </a>
         <a onClick={() => router.push("/")}>
           <span role="img" aria-label="Trang chủ"></span>

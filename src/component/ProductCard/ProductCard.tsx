@@ -1,11 +1,13 @@
 import React from "react";
 import { Product } from "src/models/Product";
 import { PriceRectangle } from "./PriceRectangle";
+import { useRouter } from 'next/router'
 
 export const ProductCard = (props?: Product) => {
+  const router = useRouter();
   return (
     <div>
-      <div className="newsCard">
+      <div className="newsCard" onClick={()=>router.push(`/chi-tiet-san-pham/${props.id}`)}>
         <div className="box-image">
           <img src={props.image.url} />
         </div>
