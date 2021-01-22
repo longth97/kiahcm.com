@@ -1,5 +1,5 @@
-
 import { useQuery } from "@apollo/client";
+import Head from "next/head";
 import React from "react";
 import { Loading } from "src/component/Loading/Loading";
 import { NewsCard } from "src/component/NewsCard/NewsCard";
@@ -11,20 +11,24 @@ import { Products } from "src/models/Product";
 import { productQuery } from "src/services/productQuery";
 
 export default function ProductPage() {
-  const { loading, error, data } = useQuery<Products>(productQuery)
-  if (loading) return <Loading />
-  if (error) return <h1>Error: {error.message}</h1>
+  const { loading, error, data } = useQuery<Products>(productQuery);
+  if (loading) return <Loading />;
+  if (error) return <h1>Error: {error.message}</h1>;
 
   return (
-    <MasterPage pageName="Sản Phẩm">
+    <div>
+      <Head>
+        <title>Sản phẩm - KIA Hồ Chí Minh</title>
+      </Head>
       <CustomCarousel />
       <main id="pProduct" className="pProduct">
         <div className="title-product">
           <Title title="HATCHBACK" />
         </div>
         <div className="body-products">
-          {
-            data.products.filter(product => product.segment === "HATCHBACK").map((e, i) =>
+          {data.products
+            .filter((product) => product.segment === "HATCHBACK")
+            .map((e, i) => (
               <ProductCard
                 key={i}
                 id={e.id}
@@ -33,13 +37,13 @@ export default function ProductPage() {
                 image={e.image}
                 description={e.description}
               />
-            )
-          }
+            ))}
         </div>
         <Title title="SEDAN" />
         <div className="body-products">
-          {
-            data.products.filter(product => product.segment === "SEDAN").map((e, i) =>
+          {data.products
+            .filter((product) => product.segment === "SEDAN")
+            .map((e, i) => (
               <ProductCard
                 key={i}
                 id={e.id}
@@ -48,13 +52,13 @@ export default function ProductPage() {
                 image={e.image}
                 description={e.description}
               />
-            )
-          }
+            ))}
         </div>
         <Title title="SUV" />
         <div className="body-products">
-          {
-            data.products.filter(product => product.segment === "SUV").map((e, i) =>
+          {data.products
+            .filter((product) => product.segment === "SUV")
+            .map((e, i) => (
               <ProductCard
                 key={i}
                 id={e.id}
@@ -63,14 +67,14 @@ export default function ProductPage() {
                 image={e.image}
                 description={e.description}
               />
-            )
-          }
+            ))}
         </div>
 
         <Title title="MPV" />
         <div className="body-products">
-          {
-            data.products.filter(product => product.segment === "MPV").map((e, i) =>
+          {data.products
+            .filter((product) => product.segment === "MPV")
+            .map((e, i) => (
               <ProductCard
                 key={i}
                 id={e.id}
@@ -79,10 +83,9 @@ export default function ProductPage() {
                 image={e.image}
                 description={e.description}
               />
-            )
-          }
+            ))}
         </div>
-{/* 
+        {/* 
         <Title title="OTHER" />
         <div className="body-products">
           {
@@ -99,7 +102,6 @@ export default function ProductPage() {
           }
         </div> */}
       </main>
-    </MasterPage>
-
+    </div>
   );
 }

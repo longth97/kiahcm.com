@@ -10,13 +10,16 @@ import { ApolloProvider } from "@apollo/client";
 import { client } from "../apollo/apollo";
 import moment from "moment";
 import CustomThemeProvider from "src/theme/theme";
+import MasterPage from "src/component/website/master/MasterPage";
 
 function App({ Component, pageProps }: AppProps) {
-  moment.locale("vi")
+  moment.locale("vi");
   return (
     <ApolloProvider client={client}>
       <CustomThemeProvider>
-        <Component {...pageProps} />
+        <MasterPage>
+          <Component {...pageProps} />
+        </MasterPage>
       </CustomThemeProvider>
     </ApolloProvider>
   );
