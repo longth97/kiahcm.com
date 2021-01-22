@@ -25,41 +25,54 @@ export default function DetailPage() {
   if (error) return <h1> Error: {error.message}</h1>;
 
   return (
-    <MasterPage pageName="San pham">
+    <MasterPage >
       <main id="pProductDetail" className="pProductDetail">
         <Container>
           <div className="description-product">
             <div className="contentDetails carousel">
-              <CarouselProduct images={data.product.imagesCarousel} />
+                {
+                    data.product
+                    ? data.product.imagesCarousel
+                        ? <CarouselProduct images={data.product.imagesCarousel} />
+                        : <></>
+                    : <></>
+                }
+              
             </div>
             <div className="contentDetails description">
-              <DescriptionProduct
-                nameProduct={data.product.name}
-                price={data.product.price}
-                codeProduct={data.product.name}
-              />
+                {
+                    data.product
+                    ? data.product
+                        ?<DescriptionProduct
+                            nameProduct={data.product.name}
+                            price={data.product.price}
+                            codeProduct={data.product.name}/>
+                        : <></>
+                    : <></>
+                }
+              
             </div>
           </div>
           <div className="content-product">
             <TabViewProductDetail
-              description={data.product.content?.markdown}
-              feature={data.product.feature?.markdown}
-              specifications={data.product.spectifications?.markdown}
-              imagesActual={data.product.imagesActual?.markdown}
+              description={data.product?.content?.markdown}
+              feature={data.product?.feature?.markdown}
+              specifications={data.product?.spectifications?.markdown}
+              imagesActual={data.product?.imagesActual?.markdown}
             />
           </div>
         </Container>
-        <style jsx>{`
-          .contentDetails {
-            width: 50%;
-          }
-          .description {
-            margin-left: 2%;
-          }
-          .content-product {
-            padding-top: 50px;
-          }
-        `}</style>
+            <style jsx>{`
+            .contentDetails {
+                width: 50%;
+            }
+            .description {
+                margin-left: 2%;
+            }
+            .content-product {
+                padding-top: 50px;
+            }
+            `}</style>
       </main>
     </MasterPage>
   );

@@ -113,6 +113,13 @@ export default function menuCustomList() {
             width: 170px;
           }
         }
+        @media screen and (min-width : 1919px){
+          .menuCustomList{
+            a{
+              font-size: 19px;
+            }
+          }
+        }
         @media screen and (min-width : 1023px){
           .menuCustomList{
             display: flex;
