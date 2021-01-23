@@ -76,6 +76,12 @@ footer{
     }
 }
 
+.pProductDetail {
+    .description-product{
+        display: flex;
+    }
+}
+
 .slick-dots{
     position: absolute;
     bottom: 30px;
