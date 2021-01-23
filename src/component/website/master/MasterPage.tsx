@@ -11,6 +11,7 @@ import Container from "src/component/website/elemets/Container";
 
 type Props = {
   children: ReactNode;
+  title: string;
 };
 
 const BlankMasterPage = (props: Props) => {
@@ -22,6 +23,7 @@ const BlankMasterPage = (props: Props) => {
         nofollow={CONFIG.environment != "production"}
         noindex={CONFIG.environment != "production"}
       /> */}
+      <title>{props.title} - {CONFIG.site.title}</title>
 
       <Head>
         <meta name="description" content={CONFIG.site.description}></meta>

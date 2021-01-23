@@ -23,9 +23,8 @@ export default function DetailPage() {
   );
   if (loading) return <Loading />;
   if (error) return <h1> Error: {error.message}</h1>;
-
-  return (
-    <MasterPage >
+  if(data) return (
+    <MasterPage title="Sản phẩm">
       <main id="pProductDetail" className="pProductDetail">
         <Container>
           <div className="description-product">

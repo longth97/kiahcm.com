@@ -17,9 +17,7 @@ export default function ProductPage() {
 
   return (
     <div>
-      <Head>
-        <title>Sản phẩm - KIA Hồ Chí Minh</title>
-      </Head>
+      <MasterPage title="Sản phẩm">
       <CustomCarousel />
       <main id="pProduct" className="pProduct">
         <div className="title-product">
@@ -102,6 +100,7 @@ export default function ProductPage() {
           }
         </div> */}
       </main>
+      </MasterPage>
     </div>
   );
 }

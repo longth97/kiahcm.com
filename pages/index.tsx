@@ -20,9 +20,7 @@ export default function HomePage() {
   if (error) return <h1>Error: {error.message}</h1>;
   return (
     <div>
-      <Head>
-        <title>Trang chủ - KIA Hồ Chí Minh</title>
-      </Head>
+       <MasterPage title="Trang chủ">
       <CustomCarousel />
       <main id="pHome" className="pHome">
         <Container>
@@ -151,6 +149,7 @@ export default function HomePage() {
           }
         `}</style>
       </main>
+      </MasterPage>
     </div>
   );
 }
