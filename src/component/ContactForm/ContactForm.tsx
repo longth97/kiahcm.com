@@ -1,35 +1,47 @@
-import { Box, Button, Grid, TextField } from "@material-ui/core";
+import { Box, Button, Grid, Snackbar, TextField } from "@material-ui/core";
 import React from "react";
 import { useForm } from "react-hook-form";
 import Container from "../website/elemets/Container";
+import { ContactMutation } from "../../services/contactform.query";
+import { useMutation } from "@apollo/client";
+import { Alert } from "../Alert/Alert";
 
 type Inputs = {
   name: string;
-  phoneNumber: number;
+  phoneNumber: string;
+  email: string;
+  address: string;
+  content: string;
 };
 
 export default function ContactForm() {
-  const { register, handleSubmit, watch, errors } = useForm<Inputs>();
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    console.log({ e });
-    const response = await fetch("/access", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
+  const { register, handleSubmit, watch, reset, errors } = useForm<Inputs>();
+  const [createContact] = useMutation(ContactMutation);
+  const [open, setOpen] = React.useState(false);
+  const handleClose = (event?: React.SyntheticEvent, reason?: string) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
+  const onSubmit = async (data: Inputs) => {
+    const name = await createContact({
+      variables: {
+        name: data.name,
+        phoneNumber: data.phoneNumber,
+        email: data.email,
+        address: data.address,
+        content: data.content,
       },
-      body: JSON.stringify({ e }),
     });
-    const resData = await response.json();
-    if (resData.status === "success") {
-      alert("Message Sent.");
-      this.resetForm();
-    } else if (resData.status === "fail") {
-      alert("Message failed to send.");
+    if (name) {
+      setOpen(true);
+      reset();
+    } else {
+      alert("Đã có lỗi xảy ra vui lòng thử lại!!!");
     }
   };
-
-  console.log(watch("example")); // watch input value by passing the name of it
 
   return (
     <div className="contact-form">
@@ -50,12 +62,12 @@ export default function ContactForm() {
               className="input"
               type="text"
               placeholder="Họ và tên"
-              name="First name"
+              name="name"
               ref={register({ maxLength: 20 })}
             />
             <input
               className="input"
-              type="tel"
+              type="text"
               placeholder="Số điện thoại"
               name="phoneNumber"
               pattern="[0-9]{10}"
@@ -86,6 +98,12 @@ export default function ContactForm() {
 
             <input className="submit" type="submit" value="Liên hệ" />
           </form>
+          <Snackbar open={open} autoHideDuration={9000} onClose={handleClose}>
+            <Alert onClose={handleClose} severity="success">
+              Đã gửi thông tin thành công. Chúng tôi sẽ liên lạc với bạn trong
+              thời gian sớm nhất.!
+            </Alert>
+          </Snackbar>
         </div>
       </Container>
       <style jsx>
