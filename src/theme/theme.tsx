@@ -4,26 +4,27 @@ import { AppProps } from "next/app";
 import React, { ReactNode } from "react";
 
 type Props = {
-    children: ReactNode
-}
+  children: ReactNode;
+};
 
 export default function CustomThemeProvider(props: Props) {
-    return (
-        <div>
-            <ThemeProvider theme={createMuiTheme({
-                palette: {
-                    primary: {
-                        main: "#ed1c24",
-                    },
-                    secondary: {
-                        main: "#424242",
-                    },
-                    divider: "#EE5123",
-                },
-            })}>
-                {props.children}
-            </ThemeProvider>
-        </div >
-    )
-
+  return (
+    <div>
+      <ThemeProvider
+        theme={createMuiTheme({
+          palette: {
+            primary: {
+              main: "#ed1c24",
+            },
+            secondary: {
+              main: "#071672",
+            },
+            divider: "#EE5123",
+          },
+        })}
+      >
+        {props.children}
+      </ThemeProvider>
+    </div>
+  );
 }
