@@ -88,6 +88,7 @@ export default function HomePage() {
             <div className="body-news">
               {data.home.news.map((e, i) => (
                 <NewsCard
+                  id={e.id}
                   key={i}
                   date={e.createdAt}
                   url={e.image.url}
