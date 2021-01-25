@@ -2,7 +2,6 @@ import { useQuery } from "@apollo/client";
 import Head from "next/head";
 import React from "react";
 import { Loading } from "src/component/Loading/Loading";
-import { NewsCard } from "src/component/NewsCard/NewsCard";
 import { ProductCard } from "src/component/ProductCard/ProductCard";
 import CustomCarousel from "src/component/website/carousel/Carousel";
 import Container from "src/component/website/elemets/Container";
