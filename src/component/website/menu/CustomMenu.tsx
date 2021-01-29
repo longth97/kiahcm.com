@@ -1,6 +1,7 @@
 
 import { useRouter } from "next/router";
 import { type } from "os";
+import asset from "plugins/assets/asset";
 import { useRef, useState, useEffect } from "react";
 import CONFIG from "web.config";
 
@@ -30,38 +31,34 @@ const Menu = (props?: MenuProps) => {
         <span role="img" aria-label="Trang chủ"></span>
             Trang chủ
         </a>
-      <a onClick={() => router.push("/")}>
+      <a onClick={() => router.push("/san-pham")}>
         <span role="img" aria-label="Sản phẩm"></span>
             Sản phẩm
         </a>
-      <a onClick={() => router.push("/")}>
+      <a onClick={() => router.push("/dich-vu")}>
         <span role="img" aria-label="Dịch vụ"></span>
             Dịch vụ
         </a>
-      <a onClick={() => router.push("/")}>
+      <a onClick={() => router.push("/bang-gia")}>
         <span role="img" aria-label="Bảng giá"></span>
             Bảng giá
         </a>
-      <a onClick={() => router.push("/")}>
+      <a onClick={() => router.push("/tin-tuc")}>
         <span role="img" aria-label="Tin tức"></span>
             Tin tức
         </a>
-      <a onClick={() => router.push("/")}>
-        <span role="img" aria-label="Tin tức"></span>
-            Tin tức
-        </a>
-      <a onClick={() => router.push("/")}>
+      <a onClick={() => router.push("/gioi-thieu")}>
         <span role="img" aria-label="Giới thiệu"></span>
             Giới thiệu
         </a>
-      <a onClick={() => router.push("/")}>
+      <a onClick={() => router.push("/lien-he")}>
         <span role="img" aria-label="Liên hệ"></span>
             Liên hệ
         </a>
 
       <style jsx>{`
             .StyledMenu{
-                z-index: 1;
+                z-index: 3;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -191,6 +188,7 @@ export default function MenuDemo() {
           status={status}
           setContext={setStatus}
         />
+        <img className="logo" src={asset("/logo.jpg")}/>
       </div>
 
     </div>

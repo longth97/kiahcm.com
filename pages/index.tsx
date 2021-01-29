@@ -19,11 +19,12 @@ export default function HomePage() {
   const { loading, error, data } = useQuery<Home>(HomeQuery);
   if (loading) return <Loading />;
   if (error) return <h1>Error: {error.message}</h1>;
-  return (
+  if(data) return (
     <div>
       <MasterPage title="Trang chủ">
-        <CustomCarousel />
+       
         <main id="pHome" className="pHome">
+        <CustomCarousel />
           <Container>
             <div className="body-products">
               {data.home.products.map((e, i) => (
