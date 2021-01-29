@@ -9,7 +9,7 @@ export default function SnowEffect ( ){
 
         let list : Array<String> = [];
 
-        for(let i = 0; i <= 199; i++){
+        for(let i = 0; i <= 39; i++){
             list.push(i.toString());
         }
        
@@ -36,10 +36,10 @@ export default function SnowEffect ( ){
             }
 
             .snow {
-                $total: 200;
+                $total: 100;
                 position: absolute;
-                width: 10px;
-                height: 10px;
+                width: 25px;
+                height: 25px;
                 background: white;
                 border-radius: 50%;
 

@@ -9,7 +9,12 @@ footer{
         align-items: center;
     }
 }
-
+header{
+    z-index: 99;
+}
+body{
+    z-index: 1;
+}
 .pHome{
     // padding: 0px 100px 0px 100px;
     .body-products{

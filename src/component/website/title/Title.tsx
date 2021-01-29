@@ -36,6 +36,16 @@ export default function Title(props: Title) {
                     padding-right: 10px;
                 }
             }
+            @media only screen and (max-width : 1024px){
+                .title {
+                    font-size: 6vw;
+                }
+            }
+            @media only screen and (max-width : 599px){
+                .title {
+                    font-size: 5vw;
+                }
+            }
        `}</style>
     </h2>
 }
