@@ -18,8 +18,9 @@ export default function ProductPage() {
   return (
     <div>
       <MasterPage title="Sản phẩm">
-        <CustomCarousel />
+       
         <main id="pProduct" className="pProduct">
+          <CustomCarousel />
           <Container>
             <div className="title-product">
               <Title title="HATCHBACK" />

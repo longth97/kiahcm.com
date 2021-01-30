@@ -19,6 +19,7 @@ export default function ProductPage() {
   if (data)
     return (
       <MasterPage title="Dịch vụ">
+<<<<<<< HEAD
         <hr />
         <Container>
           {data.intros.length === 1 ? (
@@ -35,6 +36,28 @@ export default function ProductPage() {
             <div>Chưa có dữ liệu</div>
           )}
         </Container>
+=======
+      
+        <main  id="pIntroduce" className="pIntroduce">
+          <hr />
+          <Container>
+            {data.intros.length === 1 ? (
+              <ReactMarkdown
+                source={data?.intros[0]?.content.markdown}
+                escapeHtml={false}
+                transformImageUri={(uri) =>
+                  uri.startsWith("http")
+                    ? uri
+                    : `${process.env.NEXT_PUBLIC_API_URL}${uri}`
+                }
+              />
+            ) : (
+              <div>Chưa có dữ liệu</div>
+            )}
+          </Container>
+        </main>
+        
+>>>>>>> develop
       </MasterPage>
     );
 }
