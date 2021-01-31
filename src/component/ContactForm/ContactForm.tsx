@@ -35,9 +35,21 @@ export default function ContactForm() {
         content: data.content,
       },
     });
+
+    await fetch("/api/contact", {
+      method: "post",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }).then((res) => {
+      console.log(`thanh cong ${res.body}`);
+    });
+
     if (name) {
       setOpen(true);
-      reset();
+      // reset();
     } else {
       alert("Đã có lỗi xảy ra vui lòng thử lại!!!");
     }
@@ -79,7 +91,7 @@ export default function ContactForm() {
               id="email"
               name="email"
               placeholder="Email"
-              ref={register}
+              // ref={register}
             />
             <input
               className="input"
