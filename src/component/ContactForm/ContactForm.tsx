@@ -91,7 +91,7 @@ export default function ContactForm() {
               id="email"
               name="email"
               placeholder="Email"
-              ref={register}
+              // ref={register}
             />
             <input
               className="input"
