@@ -11,13 +11,18 @@ import { client } from "../apollo/apollo";
 import moment from "moment";
 import CustomThemeProvider from "src/theme/theme";
 import MasterPage from "src/component/website/master/MasterPage";
+import dynamic from "next/dynamic";
+const FacebookChatPlugin = dynamic(() => import("src/component/website/facebook/FacebookChat"), { ssr: false });
 
-function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps, router }: AppProps) {
   moment.locale("vi");
+  const isOnAdminPages = router && router.asPath && router.asPath.includes("/admin");
+
   return (
     <ApolloProvider client={client}>
       <CustomThemeProvider>
           <Component {...pageProps} />
+          {!isOnAdminPages && <FacebookChatPlugin />}
       </CustomThemeProvider>
     </ApolloProvider>
   );
