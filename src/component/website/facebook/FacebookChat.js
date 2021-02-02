@@ -103,7 +103,7 @@ const FacebookChatPlugin = ({
                 }
 
             }))
-        }, 3000);
+        }, 4000);
 
         return () => {
             clearTimeout(timeout);
