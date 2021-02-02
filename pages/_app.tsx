@@ -11,8 +11,9 @@ import { client } from "../apollo/apollo";
 import moment from "moment";
 import renderHTML from 'react-render-html';
 import CustomThemeProvider from "src/theme/theme";
-import MasterPage from "src/component/website/master/MasterPage";
-import dynamic from "next/dynamic";
+import CONFIG from 'web.config';
+// import MasterPage from "src/component/website/master/MasterPage";
+// import dynamic from "next/dynamic";
 // const FacebookChatPlugin = dynamic(() => import("src/component/website/facebook/FacebookChat"), { ssr: false });
 
 function App({ Component, pageProps, router }: AppProps) {
@@ -39,7 +40,7 @@ function App({ Component, pageProps, router }: AppProps) {
   <!-- Your Chat Plugin code -->
   <div class="fb-customerchat"
     attribution="setup_tool"
-    page_id="114760456918089"
+    page_id="${CONFIG.NEXT_PUBLIC_FB_PAGE_ID}"
 theme_color="#fa3c4c">
   </div>`
 
