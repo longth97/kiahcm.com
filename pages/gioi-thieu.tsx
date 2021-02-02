@@ -19,8 +19,7 @@ export default function ProductPage() {
   if (data)
     return (
       <MasterPage title="Dịch vụ">
-      
-        <main  id="pIntroduce" className="pIntroduce">
+        <main id="pIntroduce" className="pIntroduce">
           <hr />
           <Container>
             {data.intros.length === 1 ? (
@@ -38,7 +37,6 @@ export default function ProductPage() {
             )}
           </Container>
         </main>
-        
       </MasterPage>
     );
 }

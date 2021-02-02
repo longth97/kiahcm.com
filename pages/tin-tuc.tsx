@@ -20,20 +20,18 @@ export default function ProductPage() {
             <br />
             <Title title="tin tức"></Title>
             <br />
-              {data.news.map((e: New, i: number) => (
-                <NewsCard
-                  id={e.id}
-                  date={e.createdAt}
-                  title={e.title}
-                  description={e.description}
-                  url={e.image.url}
-                  key={i}
-                />
-              ))}
+            {data.news.map((e: New, i: number) => (
+              <NewsCard
+                id={e.id}
+                date={e.createdAt}
+                title={e.title}
+                description={e.description}
+                url={e.image.url}
+                key={i}
+              />
+            ))}
           </Container>
-
         </main>
-        
       </MasterPage>
     );
 }
