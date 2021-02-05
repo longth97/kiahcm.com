@@ -133,7 +133,7 @@ const BlankMasterPage = (props: Props) => {
         </a>
         <a href="tel:0972205133" className="icon-call">
           <img src={asset("/image/icon-phone-call.png")}/>
-          {/* <h5 className="text">Hotline : <b>028.3519 4690</b></h5> */}
+          <h5 className="text">Hotline : <b>097 220 5133</b></h5>
         </a>
         <style jsx>{`
           .icon-call{
@@ -143,13 +143,14 @@ const BlankMasterPage = (props: Props) => {
           position: absolute;
           width: 190px;
           font-family: Montserrat-Black;
-          background-color: rgba(255,255,255,0.5);
+          background-color: rgba(255,255,255,0.9);
           padding: 3px 5px;
           border-radius: 2px;
           text-align: center;
           b{
             color: #ed1c24;
-            font-weight: bold
+            font-weight: bold;
+            font-size: 18px;
           }
         }
         cursor: pointer;
@@ -189,8 +190,8 @@ const BlankMasterPage = (props: Props) => {
         backface-visibility: hidden;
       }
       .icon-call:hover .text{
-        right: 105%;
-        transition: 0.2s;
+        left: 105%;
+        transition: 0.5s;
         opacity:1;
       }
       @keyframes play {
