@@ -189,7 +189,7 @@ const BlankMasterPage = (props: Props) => {
             backface-visibility: hidden;
           }
           .icon-call:hover .text {
-            left: 105%;
+            right: 140%;
             transition: 0.5s;
             opacity: 1;
           }
