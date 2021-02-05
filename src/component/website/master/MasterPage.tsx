@@ -256,7 +256,7 @@ const BlankMasterPage = (props: Props) => {
             .icon-call {
               width: 40px;
               height: 40px;
-              right: 10px;
+              right: 32px;
             }
           }
         `}</style>
