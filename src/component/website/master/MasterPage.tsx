@@ -155,8 +155,8 @@ const BlankMasterPage = (props: Props) => {
             }
             cursor: pointer;
             position: fixed;
-            bottom: 50px;
-            right: 32px;
+            bottom: 120px;
+            right: 24px;
             width: 50px;
             height: 50px;
             border-radius: 50%;
