@@ -9,9 +9,9 @@ import React from "react";
 import { ApolloProvider } from "@apollo/client";
 import { client } from "../apollo/apollo";
 import moment from "moment";
-import renderHTML from 'react-render-html';
+import renderHTML from "react-render-html";
 import CustomThemeProvider from "src/theme/theme";
-import CONFIG from 'web.config';
+import CONFIG from "web.config";
 // import MasterPage from "src/component/website/master/MasterPage";
 // import dynamic from "next/dynamic";
 // const FacebookChatPlugin = dynamic(() => import("src/component/website/facebook/FacebookChat"), { ssr: false });
@@ -42,16 +42,14 @@ function App({ Component, pageProps, router }: AppProps) {
     attribution="setup_tool"
     page_id="${CONFIG.NEXT_PUBLIC_FB_PAGE_ID}"
 theme_color="#fa3c4c">
-  </div>`
+  </div>`;
 
   return (
     <ApolloProvider client={client}>
       <CustomThemeProvider>
-          <Component {...pageProps} />
-          {/* {!isOnAdminPages && <FacebookChatPlugin />} */}
-          {
-            renderHTML(FB)
-          }
+        <Component {...pageProps} />
+        {/* {!isOnAdminPages && <FacebookChatPlugin />} */}
+        {renderHTML(FB)}
       </CustomThemeProvider>
     </ApolloProvider>
   );
