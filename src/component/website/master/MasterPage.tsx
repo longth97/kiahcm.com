@@ -11,7 +11,7 @@ import { NextSeo } from 'next-seo';
 type Props = {
   children: ReactNode;
   title: string;
-  pageName: string;
+  pageName?: string;
 };
 
 const MasterPage = (props: Props) => {
