@@ -14,7 +14,7 @@ export default function ProductPage() {
   if (error) return <h1>Error: {error.message}</h1>;
   if (data)
     return (
-      <MasterPage title={"Tin tức"}>
+      <MasterPage title={"Tin tức"} pageName="Tin Tức">
         <main>
           <Container>
             <br />

@@ -3,81 +3,60 @@ import CONFIG from "web.config";
 import { useRouter } from "next/router";
 // import { NextSeo } from 'next-seo';
 import asset from "plugins/assets/asset";
-import { type } from "os";
 import { ReactNode } from "react";
 import React from "react";
-import MenuList from "src/component/website/menu/MenuList";
-import Container from "src/component/website/elemets/Container";
-import MenuCustom from "src/component/website/menu/CustomMenu";
-import { useState, useEffect, useRef } from "react";
-import useScroll from "src/component/website/hooks-custom/useScroll";
+import Header from "src/component/website/header/Header";
+import { NextSeo } from 'next-seo';
 
 type Props = {
   children: ReactNode;
   title: string;
+  pageName: string;
 };
 
-const BlankMasterPage = (props: Props) => {
+const MasterPage = (props: Props) => {
   const router = useRouter();
-
-  const { scrollX, scrollY, scrollDirection } = useScroll();
-  const [fixed, setFixed] = useState(false);
-
-  useEffect(() => {
-    // console.log("scrollY", scrollY);
-    // console.log("scrollDirection", scrollDirection);
-    if (scrollY && scrollY >= 200) {
-      setFixed(true);
-    } else {
-      setFixed(false);
-    }
-  }, [scrollY, scrollDirection]);
 
   return (
     <>
       {/* <NextSeo
-        nofollow={CONFIG.environment != "production"}
-        noindex={CONFIG.environment != "production"}
-      /> */}
+            nofollow={CONFIG.environment != "production"}
+            noindex={CONFIG.environment != "production"}
+          /> */}
+          <Head>
+    
+            <title>
+              {CONFIG.site.title} | {props.pageName || "Trang chủ"}
+            </title>
+    
+            <link rel="shortcut icon" href={`${CONFIG.getBasePath()}/favicon.png`} />
 
-      <Head>
-        <meta name="description" content={CONFIG.site.description}></meta>
-        <title>
-          {props.title} - {CONFIG.site.title}
-        </title>
-        <link
-          rel="shortcut icon"
-          href={`${CONFIG.getBasePath()}/favicon.ico`}
-        />
-
-        <meta property="og:title" content={CONFIG.site.title} />
-        <meta property="og:description" content={CONFIG.site.description} />
-        <meta
-          property="og:url"
-          content={CONFIG.getBasePath() + router.asPath}
-        />
-        <meta
-          property="og:image"
-          content={`${CONFIG.getBasePath()}/share.png`}
-        />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="fb:app_id" content={CONFIG.NEXT_PUBLIC_FB_APP_ID} />
-
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            {/* Search engine */}
+            <meta name="description" content={CONFIG.site.description} />
+            <meta name="keywords" content={CONFIG.site.keyword} />
+            <meta name="author" content="Su-Phan" />
+            {/* socials */}
+            <meta property="og:type" content="website" />
+            <meta property="og:title" content={CONFIG.site.title} />
+            <meta property="og:description" content={CONFIG.site.description} />
+            <meta property="og:url" content={CONFIG.getBasePath() + router.asPath} />
+            <meta property="og:image" content={`${CONFIG.getBaseUrl()}/sharefb.png`} />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="630" />
+            <meta property="og:image:alt" content={CONFIG.site.title} />
+            <meta property="fb:app_id" content={CONFIG.NEXT_PUBLIC_FB_APP_ID} />
+    
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0" />
+            
 
         <link
           href={asset("/dashkit/fonts/cerebrisans/cerebrisans.css")}
           rel="stylesheet"
         />
       </Head>
-      <header className={fixed === true ? "fixed" : ""}>
-        <Container>
-          <MenuList></MenuList>
-          <MenuCustom></MenuCustom>
-        </Container>
-      </header>
+      
       <body>
+          <Header></Header>
         <div>
           <style
             dangerouslySetInnerHTML={{
@@ -123,8 +102,7 @@ const BlankMasterPage = (props: Props) => {
           </div>
         </div>
         {props.children}
-      </body>
-      <footer>
+        <footer>
         <a href="https://kmasoft.vn/" target="_blank">
           <img src={asset("/kmasoft.png")} height="50px" />
           <span style={{ paddingLeft: "20px" }}>Design by KMASoft</span>
@@ -261,8 +239,10 @@ const BlankMasterPage = (props: Props) => {
           }
         `}</style>
       </footer>
+      </body>
+      
     </>
   );
 };
 
-export default BlankMasterPage;
+export default MasterPage;

@@ -6,7 +6,7 @@ import MasterPage from "src/component/website/master/MasterPage";
 
 export default function ContactPage() {
   return (
-    <MasterPage title="Liên hệ">
+    <MasterPage title="Liên hệ" pageName="Liên hệ">
       <main id="pContact" className="pContact">
         <ContactForm />
       </main>

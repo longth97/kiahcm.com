@@ -18,7 +18,7 @@ export default function ProductPage() {
   if (error) return <h1>Error: {error.message}</h1>;
   if (data)
     return (
-      <MasterPage title="Dịch vụ">
+      <MasterPage title="Dịch vụ" pageName="Giới thiệu">
         <main id="pIntroduce" className="pIntroduce">
           <hr />
           <Container>

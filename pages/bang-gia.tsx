@@ -18,7 +18,7 @@ export default function PricePage() {
   if (error) return <h1>Error: {error.message}</h1>;
   if (data)
     return (
-      <MasterPage title="Bảng giá">
+      <MasterPage title="Bảng giá" pageName="Bảng giá">
         <main id="pPrice" className="pPrice">
           <hr />
           <Container>

@@ -21,7 +21,7 @@ export default function HomePage() {
   if (error) return <h1>Error: {error.message}</h1>;
   if(data) return (
     <div>
-      <MasterPage title="Trang chủ">
+      <MasterPage title="Trang chủ" pageName="Trang chủ">
        
         <main id="pHome" className="pHome">
         <CustomCarousel />

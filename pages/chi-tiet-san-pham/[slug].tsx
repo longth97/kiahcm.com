@@ -25,7 +25,7 @@ export default function DetailPage() {
   if (error) return <h1> Error: {error.message}</h1>;
   if (data)
     return (
-      <MasterPage title="Sản phẩm">
+      <MasterPage title="Sản phẩm" pageName="Thông tin sản phẩm">
         <main id="pProductDetail" className="pProductDetail">
           <Container>
             <div className="description-product">
