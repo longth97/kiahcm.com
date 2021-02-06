@@ -3,7 +3,7 @@ import React from "react";
 import { Loading } from "src/component/Loading/Loading";
 import { NewsCard } from "src/component/NewsCard/NewsCard";
 import { ProductCard } from "src/component/ProductCard/ProductCard";
-import { TitleHeader } from "src/component/TitleHeader/TitleHeader";
+// import { TitleHeader } from "src/component/TitleHeader/TitleHeader";
 import CustomCarousel from "src/component/website/carousel/Carousel";
 import MasterPage from "src/component/website/master/MasterPage";
 import PrimaryButton from "src/component/website/primary-button/PrimaryButton";
@@ -12,7 +12,7 @@ import { Home } from "src/models/Home";
 import { HomeQuery } from "src/services/homeQuery";
 import SnowEffect from "src/component/website/effects/SnowEffect";
 import Container from "src/component/website/elemets/Container";
-import Head from "next/head";
+// import Head from "next/head";
 import ContactForm from "src/component/ContactForm/ContactForm";
 
 export default function HomePage() {

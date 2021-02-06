@@ -19,10 +19,10 @@ const MasterPage = (props: Props) => {
 
   return (
     <>
-      {/* <NextSeo
+      <NextSeo
             nofollow={CONFIG.environment != "production"}
             noindex={CONFIG.environment != "production"}
-          /> */}
+          />
           <Head>
     
             <title>

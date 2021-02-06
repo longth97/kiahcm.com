@@ -1,5 +1,5 @@
 import { useQuery } from "@apollo/client";
-import Head from "next/head";
+// import Head from "next/head";
 import React from "react";
 import { Loading } from "src/component/Loading/Loading";
 import { ProductCard } from "src/component/ProductCard/ProductCard";
