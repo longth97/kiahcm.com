@@ -19,7 +19,7 @@ export default function SnowEffect ( ){
 
     return <div className="snowEffect">
         {
-            listSnow ? listSnow.map(value=><div className="snow"></div>) : <> </>
+            listSnow ? listSnow.map((value, index)=><div key={index} className="snow"></div>) : <> </>
         }
         <style jsx>{`
             .snowEffect {

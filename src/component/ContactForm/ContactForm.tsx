@@ -35,9 +35,21 @@ export default function ContactForm() {
         content: data.content,
       },
     });
+
+    await fetch("/api/contact", {
+      method: "post",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }).then((res) => {
+      console.log(`thanh cong ${res.body}`);
+    });
+
     if (name) {
       setOpen(true);
-      reset();
+      // reset();
     } else {
       alert("Đã có lỗi xảy ra vui lòng thử lại!!!");
     }
@@ -56,48 +68,16 @@ export default function ContactForm() {
             aria-hidden="false"
             tabIndex={0}
           />
-
-          <form className="form" onSubmit={handleSubmit(onSubmit)}>
-            <input
-              className="input"
-              type="text"
-              placeholder="Họ và tên"
-              name="name"
-              ref={register({ maxLength: 20 })}
-            />
-            <input
-              className="input"
-              type="text"
-              placeholder="Số điện thoại"
-              name="phoneNumber"
-              pattern="[0-9]{10}"
-              ref={register({ required: true, maxLength: 10 })}
-            />
-            <input
-              className="input"
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Email"
-              ref={register}
-            />
-            <input
-              className="input"
-              type="address"
-              placeholder="Địa chỉ"
-              name="address"
-              ref={register}
-            />
-            <input
-              className="input-content"
-              type="text"
-              placeholder="Nội dung"
-              name="content"
-              ref={register}
-            />
-
-            <input className="submit" type="submit" value="Liên hệ" />
-          </form>
+          <div className="form">
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSfeS6UBc9xPe_iyXi9Ej6NAnPjIMBzVhpz-cx_g2c_MC6aKqQ/viewform?embedded=true"
+              height="450"
+              width="100%"
+              frameBorder="0"
+            >
+              Đang tải…
+            </iframe>
+          </div>
           <Snackbar open={open} autoHideDuration={9000} onClose={handleClose}>
             <Alert onClose={handleClose} severity="success">
               Đã gửi thông tin thành công. Chúng tôi sẽ liên lạc với bạn trong

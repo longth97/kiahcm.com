@@ -6,25 +6,25 @@ import Container from "src/component/website/elemets/Container";
 import ReactMarkdown from "react-markdown";
 import React from "react";
 import MasterPage from "src/component/website/master/MasterPage";
-import { introQuery } from "../src/services/intro.query";
+import { pricesQuery } from "../src/services/priceQuery";
 
-type IntroVar = {
-  intros: Service[];
+type PricesVar = {
+  prices: Service[];
 };
 
-export default function ProductPage() {
-  const { loading, error, data } = useQuery<IntroVar>(introQuery);
+export default function PricePage() {
+  const { loading, error, data } = useQuery<PricesVar>(pricesQuery);
   if (loading) return <Loading />;
   if (error) return <h1>Error: {error.message}</h1>;
   if (data)
     return (
-      <MasterPage title="Dịch vụ" pageName="Giới thiệu">
-        <main id="pIntroduce" className="pIntroduce">
+      <MasterPage title="Bảng giá" pageName="Bảng giá">
+        <main id="pPrice" className="pPrice">
           <hr />
           <Container>
-            {data.intros.length === 1 ? (
+            {data.prices.length === 1 ? (
               <ReactMarkdown
-                source={data?.intros[0]?.content.markdown}
+                source={data?.prices[0]?.content.markdown}
                 escapeHtml={false}
                 transformImageUri={(uri) =>
                   uri.startsWith("http")

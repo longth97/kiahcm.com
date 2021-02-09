@@ -23,56 +23,60 @@ export default function DetailPage() {
   );
   if (loading) return <Loading />;
   if (error) return <h1> Error: {error.message}</h1>;
-  if(data) return (
-    <MasterPage title="Sản phẩm">
-      <main id="pProductDetail" className="pProductDetail">
-        <Container>
-          <div className="description-product">
-            <div className="contentDetails carousel">
-                {
-                    data.product
-                    ? data.product.imagesCarousel
-                        ? <CarouselProduct images={data.product.imagesCarousel} />
-                        : <></>
-                    : <></>
-                }
-              
+  if (data)
+    return (
+      <MasterPage title="Sản phẩm" pageName="Thông tin sản phẩm">
+        <main id="pProductDetail" className="pProductDetail">
+          <Container>
+            <div className="description-product">
+              <div className="contentDetails carousel">
+                {data.product ? (
+                  data.product.imagesCarousel ? (
+                    <CarouselProduct images={data.product.imagesCarousel} />
+                  ) : (
+                    <></>
+                  )
+                ) : (
+                  <></>
+                )}
+              </div>
+              <div className="contentDetails description">
+                {data.product ? (
+                  data.product ? (
+                    <DescriptionProduct
+                      nameProduct={data.product.name}
+                      price={data.product.price}
+                      codeProduct={data.product.name}
+                    />
+                  ) : (
+                    <></>
+                  )
+                ) : (
+                  <></>
+                )}
+              </div>
             </div>
-            <div className="contentDetails description">
-                {
-                    data.product
-                    ? data.product
-                        ?<DescriptionProduct
-                            nameProduct={data.product.name}
-                            price={data.product.price}
-                            codeProduct={data.product.name}/>
-                        : <></>
-                    : <></>
-                }
-              
+            <div className="content-product">
+              <TabViewProductDetail
+                description={data.product?.content?.markdown}
+                feature={data.product?.feature?.markdown}
+                specifications={data.product?.spectifications?.markdown}
+                imagesActual={data.product?.imagesActual?.markdown}
+              />
             </div>
-          </div>
-          <div className="content-product">
-            <TabViewProductDetail
-              description={data.product?.content?.markdown}
-              feature={data.product?.feature?.markdown}
-              specifications={data.product?.spectifications?.markdown}
-              imagesActual={data.product?.imagesActual?.markdown}
-            />
-          </div>
-        </Container>
-            <style jsx>{`
+          </Container>
+          <style jsx>{`
             .contentDetails {
-                width: 50%;
+              width: 50%;
             }
             .description {
-                margin-left: 2%;
+              margin-left: 2%;
             }
             .content-product {
-                padding-top: 50px;
+              padding-top: 50px;
             }
-            `}</style>
-      </main>
-    </MasterPage>
-  );
+          `}</style>
+        </main>
+      </MasterPage>
+    );
 }

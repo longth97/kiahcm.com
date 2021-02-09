@@ -58,9 +58,17 @@ export default function menuCustomList() {
         <a onClick={() => router.push("/lien-he")}>
           <span role="img" aria-label="Liên hệ"></span>
                 Liên hệ
-            </a>
+        </a>
+        <a href="tel:0972205133" className="hotlineTop">
+          <h3>
+            <span>Hotline: </span>
+            <b>0972205133</b>
+          </h3>
+          
+        </a>
       </div>
       <style jsx>{`
+        
         .menuCustomList.fixed{
             position: fixed;
             z-index:9;
@@ -91,9 +99,9 @@ export default function menuCustomList() {
             }
             a{
                 color: #000;
-                padding: 5px 10px;
+                padding: 5px 6px;
                 font-size: 1vw;
-                margin: 0 20px;
+                margin: 0 10px;
                 text-transform: uppercase;
                 display: flex;
                 align-items: center;
@@ -113,10 +121,44 @@ export default function menuCustomList() {
             width: 170px;
           }
         }
+        .hotlineTop{
+          /* margin: 0 !important; */
+          h3{
+            color: #fff;
+            display: flex;
+            background-color: #131773;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            padding: 5px 10px;
+            font-size: 1vw;
+            transition: 0.2s;
+            &:hover{
+              color: #ed1c24;
+            }
+            span{
+              font-size: 1vw;
+              margin-right: 2px;
+              /* color: #ed1c24; */
+            }
+            b{
+            }
+          }
+        }
         @media screen and (min-width : 1919px){
           .menuCustomList{
             a{
-              font-size: 19px;
+              font-size: 18px;
+            }
+          }
+          .hotlineTop{
+            h3{
+              font-size: 18px;
+              span{
+                /* font-size: 10px; */
+              }
+              b{
+              }
             }
           }
         }
