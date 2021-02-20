@@ -12,7 +12,7 @@ export const ProductCard = (props?: Product) => {
         onClick={() => router.push(`/chi-tiet-san-pham/${props.id}`)}
       >
         <div className="box-image">
-          <img src={props.image.url} />
+          <img src={props.image?.url} />
         </div>
         <div className="content">
           <h3>{props.name}</h3>

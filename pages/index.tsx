@@ -39,7 +39,7 @@ export default function HomePage() {
               ))}
             </div>
             <div className="body-button">
-              <PrimaryButton text={"Xem tất cả các dòng xe"} />
+              <PrimaryButton text={"Xem tất cả các dòng xe"} href='/san-pham'/>
             </div>
           </Container>
           <div className="sectionBgEffect">
