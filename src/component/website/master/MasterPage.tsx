@@ -29,7 +29,7 @@ const MasterPage = (props: Props) => {
               {CONFIG.site.title} | {props.pageName || "Trang chủ"}
             </title>
     
-            <link rel="shortcut icon" href={`${CONFIG.getBasePath()}/favicon.png`} />
+            <link rel="shortcut icon" href={`${CONFIG.getBasePath()}/favicon.ico`} />
 
             {/* Search engine */}
             <meta name="description" content={CONFIG.site.description} />
