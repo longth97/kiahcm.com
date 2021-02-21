@@ -64,9 +64,8 @@ export const NewsCard = (props: NewsCardProps) => {
               width: 100%;
               text-align: center;
               h3 {
-                font-family: "Montserrat-Regular";
+                font-family: "Montserrat-Bold";
                 font-size: 1.3em;
-                font-weight: 700;
                 text-overflow: ellipsis;
                 display: -webkit-box;
                 -webkit-line-clamp: 2;
@@ -74,8 +73,9 @@ export const NewsCard = (props: NewsCardProps) => {
                 overflow: hidden;
               }
               p {
-                font-family: "Montserrat-Thin";
+                font-family: "Montserrat-Regular";
                 font-size: 1em;
+                padding-top: 10px;
                 text-overflow: ellipsis;
                 display: -webkit-box;
                 -webkit-line-clamp: 3;

@@ -7,6 +7,7 @@ import { New } from "../../src/models/News";
 import ReactMarkdown from "react-markdown";
 import React from "react";
 import MasterPage from "src/component/website/master/MasterPage";
+import Container from "src/component/website/elemets/Container";
 
 type NewVar = {
   new: New;
@@ -19,22 +20,25 @@ export default function DetailPage() {
   });
   if (loading) return <Loading />;
   if (error) return <h1> Error: {error.message}</h1>;
-  console.log(data.new);
   if (data)
     return (
       <MasterPage title={"Tin tức"}>
-        <div>
-          <h3>{data.new.title}</h3>
-          <ReactMarkdown
-            source={data.new.content.markdown}
-            escapeHtml={false}
-            transformImageUri={(uri) =>
-              uri.startsWith("http")
-                ? uri
-                : `${process.env.NEXT_PUBLIC_API_URL}${uri}`
-            }
-          />
-        </div>
+        <Container>
+          {data.new == null ? (
+            <div>Chưa có dữ liệu</div>
+          ) : (
+            <ReactMarkdown
+              source={data.new?.content?.markdown}
+              escapeHtml={false}
+              transformImageUri={(uri) =>
+                uri.startsWith("http")
+                  ? uri
+                  : `${process.env.NEXT_PUBLIC_API_URL}${uri}`
+              }
+            />
+          )}
+          <h3>{data.new?.title}</h3>
+        </Container>
       </MasterPage>
     );
 }
