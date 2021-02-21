@@ -62,7 +62,7 @@ export default function TableProducts(props: TableProducts) {
                     font-size: 1vw;
                     border-top: 1px silver solid;
                     
-                    font-family: "Roboto-Thin";
+                    font-family: "Montserrat-Thin";
                     
                 }
                 tr:last-child{

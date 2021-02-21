@@ -104,7 +104,6 @@ export default function ContactForm() {
               display: flex;
               .form {
                 width: 100%;
-                padding-left: 50px;
                 .input {
                   width: 100%;
                   height: 40px;

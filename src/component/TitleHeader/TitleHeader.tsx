@@ -11,7 +11,7 @@ export const TitleHeader = (props: Props) => {
                     text-align: center;
                     width: 100%;
                     text-transform: uppercase;
-                    font-family: Roboto-Bold;
+                    font-family: Montserrat-Bold;
                     color:rgb(237, 52, 12);
                 }
                     

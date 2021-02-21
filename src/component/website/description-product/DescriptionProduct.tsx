@@ -80,7 +80,7 @@ export default function Description(props: DescriptionProduct) {
           top: 10px;
         }
         .nameProduct {
-          font-family: "Roboto-Bold";
+          font-family: "Montserrat-Bold";
           font-size: 2vw;
           padding: 10px 0;
           position: relative;

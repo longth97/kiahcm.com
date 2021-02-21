@@ -56,7 +56,7 @@ export const ProductCard = (props?: Product) => {
               background: white;
               z-index: 2;
               h3 {
-                font-family: "Roboto-Regular";
+                font-family: "Montserrat-Bold";
                 font-size: 1.3em;
                 font-weight: 700;
                 text-overflow: ellipsis;
@@ -71,7 +71,7 @@ export const ProductCard = (props?: Product) => {
                 }
               }
               p {
-                font-family: "Roboto-Thin";
+                font-family: "Montserrat-regular";
                 font-size: 1em;
                 text-overflow: ellipsis;
                 display: -webkit-box;

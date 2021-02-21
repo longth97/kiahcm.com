@@ -58,7 +58,7 @@ export default function DetailPage() {
             </div>
             <div className="content-product">
               <TabViewProductDetail
-                description={data.product?.content?.markdown}
+                description={data.product?.content?.html}
                 feature={data.product?.feature?.markdown}
                 specifications={data.product?.spectifications?.markdown}
                 imagesActual={data.product?.imagesActual?.markdown}
