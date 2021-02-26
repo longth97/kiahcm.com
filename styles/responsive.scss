@@ -56,7 +56,7 @@
     }
   }
   #pProduct .body-products {
-    grid-template-columns: 1fr;
+    // grid-template-columns: 1fr;
     .newsCard .price {
       right: unset;
       right: 0;
@@ -69,10 +69,10 @@
     .body-products {
       grid-template-columns: 1fr 1fr;
       .newsCard {
-        .box-image{
-            img{
-                max-height: 80px;
-            }
+        .box-image {
+          img {
+            max-height: 80px;
+          }
         }
         .price {
           position: static;
@@ -125,10 +125,20 @@
     }
   }
   #pProduct {
-    .newsCard .price {
-      top: 53%;
-      right: -20px;
-      padding: 7px 10px 7px 10px;
+    .body-products {
+      .newsCard {
+        .box-image {
+          img {
+            max-height: 80px;
+          }
+        }
+        .price {
+          position: static;
+          top: 53%;
+          right: -20px;
+          padding: 7px 10px 7px 10px;
+        }
+      }
     }
   }
   #pProductDetail {
@@ -176,7 +186,7 @@
   #pHome .newsCard .price {
     top: 46%;
   }
-  #pProduct .newsCard .price {
-    top: 45%;
-  }
+  // #pProduct .newsCard .price {
+  //   top: 45%;
+  // }
 }
