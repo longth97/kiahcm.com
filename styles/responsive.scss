@@ -1,22 +1,3 @@
-@media only screen and (min-width: 1441px) {
-  #pProductDetail {
-    .contentDetails {
-      .nameProduct {
-        font-size: 26px;
-      }
-      .price {
-        font-size: 28px;
-      }
-    }
-  }
-  #pContact {
-    .content {
-      display: flex;
-      flex-direction: row;
-    }
-  }
-}
-
 @media only screen and (min-width: 1025px) {
   .menuCustom_su {
     display: none !important;
@@ -86,7 +67,17 @@
 @media only screen and (max-width: 599px) {
   #pHome {
     .body-products {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
+      .newsCard {
+        .box-image{
+            img{
+                max-height: 80px;
+            }
+        }
+        .price {
+          position: static;
+        }
+      }
     }
 
     .listHowToBuy {
@@ -138,12 +129,6 @@
       top: 53%;
       right: -20px;
       padding: 7px 10px 7px 10px;
-    }
-  }
-  #pContact {
-    .content {
-      display: flex;
-      flex-direction: column;
     }
   }
   #pProductDetail {
