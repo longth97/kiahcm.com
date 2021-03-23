@@ -103,9 +103,9 @@ const MasterPage = (props: Props) => {
         </div>
         {props.children}
         <footer>
-        <a href="https://kmasoft.vn/" target="_blank">
-          <img src={asset("/kmasoft.png")} height="30px" />
-          <span style={{ paddingLeft: "20px" }}>Design by KMASoft</span>
+        <a href="https://uranus-solutions.com/" target="_blank">
+          <img src="/public/icon-cm.png" height="30px" width="181" alt="icon-cm.png"/>
+          <span style={{ paddingLeft: "20px" }}>Design by Uranus Solutions</span>
         </a>
         <a href="tel:0972205133" className="icon-call">
           <img src={asset("/image/icon-phone-call.png")} />

@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ecae6ded-7afe-48cc-90ba-5514d75645c0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/styles/responsive.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/responsive.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/icon-cm.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/kmasoft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/website/master/MasterPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/website/master/MasterPage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,5 +45,8 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
